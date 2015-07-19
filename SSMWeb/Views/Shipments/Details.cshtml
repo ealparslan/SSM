@@ -1,0 +1,194 @@
+﻿@model DataLayerPrimitives.Shipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoadedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoadedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PONumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PONumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ETD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContainerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContainerType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickupReferanceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickupReferanceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VesselName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VesselName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAirShipment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAirShipment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreightCompany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreightCompany)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCustomsCleared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCustomsCleared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDelivered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDelivered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCustomsPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCustomsPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFreightPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFreightPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomsAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomsAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreightAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreightAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HandlingFeeAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HandlingFeeAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

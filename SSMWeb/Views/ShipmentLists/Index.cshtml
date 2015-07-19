@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DataLayerPrimitives.ShipmentList>
+
+@{
+    ViewBag.Title = "Shipment Items";
+}
+
+<h2>Shipment Items</h2>
+
+<p>
+    <b>New items must be added from Shipment page.</b>
+</p>
+<table id="richtable" class="display">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.SKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment.ContainerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoxCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoxQuantity)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td nowrap>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "edit" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "details" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.SKU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shipment.ContainerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoxCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoxQuantity)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

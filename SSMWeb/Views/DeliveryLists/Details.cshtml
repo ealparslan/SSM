@@ -1,0 +1,50 @@
+﻿@model DataLayerPrimitives.DeliveryList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DeliveryList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Delivery.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Delivery.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxQuantiy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxQuantiy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartCapOfBox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartCapOfBox)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
