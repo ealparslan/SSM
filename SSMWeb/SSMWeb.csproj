@@ -162,18 +162,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\COGsController.cs" />
-    <Compile Include="Controllers\FulfilmentSKUsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductCategoriesController.cs" />
-    <Compile Include="Controllers\ProductColorsController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\ProductSizesController.cs" />
-    <Compile Include="Controllers\QuantityUnitsController.cs" />
-    <Compile Include="Controllers\ShipmentListsController.cs" />
-    <Compile Include="Controllers\ShipmentsController.cs" />
+    <Compile Include="Controllers\Utils\AccountController.cs" />
+    <Compile Include="Controllers\Product\COGsController.cs" />
+    <Compile Include="Controllers\Product\FulfilmentSKUsController.cs" />
+    <Compile Include="Controllers\Utils\HomeController.cs" />
+    <Compile Include="Controllers\Utils\ManageController.cs" />
+    <Compile Include="Controllers\Product\ProductCategoriesController.cs" />
+    <Compile Include="Controllers\Product\ProductColorsController.cs" />
+    <Compile Include="Controllers\Product\ProductsController.cs" />
+    <Compile Include="Controllers\Product\ProductSizesController.cs" />
+    <Compile Include="Controllers\Product\QuantityUnitsController.cs" />
+    <Compile Include="Controllers\Shipment\ShipmentListsController.cs" />
+    <Compile Include="Controllers\Shipment\ShipmentsController.cs" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -184,28 +184,31 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Barcode.cs" />
-    <Compile Include="Models\Box.cs" />
-    <Compile Include="Models\COG.cs" />
-    <Compile Include="Models\DeliveriesController.cs" />
-    <Compile Include="Models\Delivery.cs" />
-    <Compile Include="Models\DeliveryList.cs" />
-    <Compile Include="Models\DeliveryListsController.cs" />
-    <Compile Include="Models\FulfilmentSKU.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderList.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductCategory.cs" />
-    <Compile Include="Models\ProductColor.cs" />
-    <Compile Include="Models\ProductSize.cs" />
-    <Compile Include="Models\QuantityUnit.cs" />
-    <Compile Include="Models\Shipment.cs" />
-    <Compile Include="Models\ShipmentList.cs" />
-    <Compile Include="Models\SSMModel.cs" />
+    <Compile Include="Models\Utils\AccountViewModels.cs" />
+    <Compile Include="Models\Order\Barcode.cs" />
+    <Compile Include="Models\Order\Box.cs" />
+    <Compile Include="Controllers\Order\BoxesController.cs" />
+    <Compile Include="Models\Product\COG.cs" />
+    <Compile Include="Controllers\Shipment\DeliveriesController.cs" />
+    <Compile Include="Models\Shipment\Delivery.cs" />
+    <Compile Include="Models\Shipment\DeliveryList.cs" />
+    <Compile Include="Controllers\Shipment\DeliveryListsController.cs" />
+    <Compile Include="Models\Product\FulfilmentSKU.cs" />
+    <Compile Include="Models\Utils\IdentityModels.cs" />
+    <Compile Include="Models\Order\Location.cs" />
+    <Compile Include="Models\Utils\ManageViewModels.cs" />
+    <Compile Include="Models\Order\Order.cs" />
+    <Compile Include="Models\Order\OrderList.cs" />
+    <Compile Include="Controllers\Order\OrderListsController.cs" />
+    <Compile Include="Controllers\Order\OrdersController.cs" />
+    <Compile Include="Models\Product\Product.cs" />
+    <Compile Include="Models\Product\ProductCategory.cs" />
+    <Compile Include="Models\Product\ProductColor.cs" />
+    <Compile Include="Models\Product\ProductSize.cs" />
+    <Compile Include="Models\Product\QuantityUnit.cs" />
+    <Compile Include="Models\Shipment\Shipment.cs" />
+    <Compile Include="Models\Shipment\ShipmentList.cs" />
+    <Compile Include="Models\Utils\SSMModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -427,6 +430,21 @@
     <Content Include="Views\DeliveryLists\Details.cshtml" />
     <Content Include="Views\DeliveryLists\Edit.cshtml" />
     <Content Include="Views\DeliveryLists\Index.cshtml" />
+    <Content Include="Views\Boxes\Create.cshtml" />
+    <Content Include="Views\Boxes\Delete.cshtml" />
+    <Content Include="Views\Boxes\Details.cshtml" />
+    <Content Include="Views\Boxes\Edit.cshtml" />
+    <Content Include="Views\Boxes\Index.cshtml" />
+    <Content Include="Views\OrderLists\Create.cshtml" />
+    <Content Include="Views\OrderLists\Delete.cshtml" />
+    <Content Include="Views\OrderLists\Details.cshtml" />
+    <Content Include="Views\OrderLists\Edit.cshtml" />
+    <Content Include="Views\OrderLists\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +458,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
