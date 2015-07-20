@@ -15,33 +15,29 @@ namespace DataLayerPrimitives
         public int ProductId { get; set; }
 
         [Required]
-        public string PartCapOfBox { get; set; }
+        public int PartCapOfBox { get; set; }
 
         [Required]
-        public string PartQtyUnitID { get; set; }
+        public int PartQtyUnitID { get; set; }
 
         [Required]
-        public string PartQtyLeft { get; set; }
+        public int PartQtyLeft { get; set; }
 
         [Required]
-        public string BoxUnitOfTotal { get; set; }
+        public int BoxUnitOfTotal { get; set; }
 
         [Required]
-        public string BoxTotalOfTotal { get; set; }
+        public int BoxTotalOfTotal { get; set; }
 
         [Required]
         public string PONumber { get; set; }
 
-        [Required]
-        public string BoxBrcdID { get; set; }
-
         public int LocationID { get; set; }
 
-        public int OrderId { get; set; }
+        [Required]
+        public int DeliveryId { get; set; }
 
         [Required]
-        public string DeliveryId { get; set; }
-
         public virtual Barcode Barcode { get; set; }
 
         public virtual Location Location { get; set; }
@@ -49,5 +45,8 @@ namespace DataLayerPrimitives
         public virtual Order Order { get; set; }
 
         public virtual Product Product { get; set; }
+
+        public virtual OrderList OrderList { get; set; }
+
     }
 }

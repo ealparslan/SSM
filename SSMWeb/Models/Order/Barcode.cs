@@ -10,7 +10,7 @@ namespace DataLayerPrimitives
     {
         public Barcode()
         {
-            Boxes = new HashSet<Box>();
+            Box = new Box();
         }
 
         public int Id { get; set; }
@@ -21,6 +21,10 @@ namespace DataLayerPrimitives
         [Required]
         public string CodeType { get; set; }
 
-        public virtual ICollection<Box> Boxes { get; set; }
+        [Required]
+        public byte[] Image { get; set; }
+
+        [Required]
+        public virtual Box Box { get; set; }
     }
 }

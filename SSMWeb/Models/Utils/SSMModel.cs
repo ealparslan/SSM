@@ -31,9 +31,14 @@ namespace DataLayerPrimitives
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Barcode>()
+            modelBuilder.Entity<Product>()
                 .HasMany(e => e.Boxes)
-                .WithRequired(e => e.Barcode)
+                .WithRequired(e => e.Product)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(e => e.ShipmentLists)
+                .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<COG>()
@@ -42,29 +47,9 @@ namespace DataLayerPrimitives
                 .HasForeignKey(e => e.COGSId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Delivery>()
-                .HasMany(e => e.DeliveryLists)
-                .WithRequired(e => e.Delivery)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<FulfilmentSKU>()
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.FulfilmentSKU)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Location>()
-                .HasMany(e => e.Boxes)
-                .WithRequired(e => e.Location)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<OrderList>()
-                .HasMany(e => e.Orders)
-                .WithRequired(e => e.OrderList)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.Boxes)
-                .WithRequired(e => e.Order)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ProductCategory>()
@@ -77,16 +62,6 @@ namespace DataLayerPrimitives
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.ProductColor)
                 .HasForeignKey(e => e.ColorId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.Boxes)
-                .WithRequired(e => e.Product)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.ShipmentLists)
-                .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ProductSize>()
@@ -104,6 +79,41 @@ namespace DataLayerPrimitives
             modelBuilder.Entity<Shipment>()
                 .HasMany(e => e.ShipmentLists)
                 .WithRequired(e => e.Shipment)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Delivery>()
+                .HasMany(e => e.DeliveryLists)
+                .WithRequired(e => e.Delivery)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Location>()
+                .HasMany(e => e.Boxes)
+                .WithRequired(e => e.Location)
+                .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Box>()
+            //    .HasRequired(e => e.Barcode)
+            //    .WithRequiredDependent(e => e.Box)
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Box>()
+            //    .HasRequired(e => e.Location)
+            //    .WithMany(e => e.Boxes)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<OrderList>()
+                .HasRequired(e => e.Box)
+                .WithRequiredDependent(e => e.OrderList)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Order>()
+                .HasMany(e => e.OrderLists)
+                .WithRequired(e => e.Order)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Barcode>()
+                .HasRequired(e => e.Box)
+                .WithRequiredDependent(e => e.Barcode)
                 .WillCascadeOnDelete(false);
         }
     }

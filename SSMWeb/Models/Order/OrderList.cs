@@ -10,7 +10,8 @@ namespace DataLayerPrimitives
     {
         public OrderList()
         {
-            Orders = new HashSet<Order>();
+            Box = new Box();
+            Order = new Order();
         }
 
         public int Id { get; set; }
@@ -31,6 +32,8 @@ namespace DataLayerPrimitives
         [Required]
         public string SoldQty { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual Box Box { get; set; }
+        public virtual Order Order { get; set; }
+
     }
 }
