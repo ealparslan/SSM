@@ -164,6 +164,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\Order\BarcodesController.cs" />
+    <Compile Include="Controllers\Order\BoxesController.cs" />
+    <Compile Include="Controllers\Order\OrderListsController.cs" />
+    <Compile Include="Controllers\Order\OrdersController.cs" />
     <Compile Include="Models\Order\Barcode.cs" />
     <Compile Include="Models\Order\Box.cs" />
     <Compile Include="Controllers\Utils\AccountController.cs" />
@@ -188,6 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Order\LocationsController.cs" />
     <Compile Include="Models\Utils\AccountViewModels.cs" />
     <Compile Include="Models\Product\COG.cs" />
     <Compile Include="Controllers\Shipment\DeliveriesController.cs" />
@@ -221,7 +226,6 @@
     <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\spacelab.css" />
-    <Content Include="deneme.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -429,10 +433,34 @@
     <Content Include="Views\DeliveryLists\Details.cshtml" />
     <Content Include="Views\DeliveryLists\Edit.cshtml" />
     <Content Include="Views\DeliveryLists\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Barcodes\Create.cshtml" />
+    <Content Include="Views\Barcodes\Delete.cshtml" />
+    <Content Include="Views\Barcodes\Details.cshtml" />
+    <Content Include="Views\Barcodes\Edit.cshtml" />
+    <Content Include="Views\Barcodes\Index.cshtml" />
+    <Content Include="Views\Boxes\Create.cshtml" />
+    <Content Include="Views\Boxes\Delete.cshtml" />
+    <Content Include="Views\Boxes\Details.cshtml" />
+    <Content Include="Views\Boxes\Edit.cshtml" />
+    <Content Include="Views\Boxes\Index.cshtml" />
+    <Content Include="Views\OrderLists\Create.cshtml" />
+    <Content Include="Views\OrderLists\Delete.cshtml" />
+    <Content Include="Views\OrderLists\Details.cshtml" />
+    <Content Include="Views\OrderLists\Edit.cshtml" />
+    <Content Include="Views\OrderLists\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

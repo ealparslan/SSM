@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DataLayerPrimitives.OrderList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Box.PONumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoldDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesChannel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoxId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoldQty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Box.PONumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoldDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesChannel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoxId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoldQty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
