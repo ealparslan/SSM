@@ -6,18 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
     public class BoxesController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: Boxes
         public ActionResult Index()
         {
-            var boxes = db.Boxes.Include(b => b.Location).Include(b => b.Product);
+            var boxes = db.Boxes.Include(b => b.Barcode).Include(b => b.Location).Include(b => b.Product);
             return View(boxes.ToList());
         }
 
@@ -39,6 +38,7 @@ namespace SSMWeb.Models
         // GET: Boxes/Create
         public ActionResult Create()
         {
+            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber");
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name");
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             return View();
@@ -58,6 +58,7 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
 
+            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);
@@ -75,6 +76,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
+            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);
@@ -93,6 +95,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);

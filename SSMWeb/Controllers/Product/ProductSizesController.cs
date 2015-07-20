@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class ProductSizesController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: ProductSizes
         public ActionResult Index()

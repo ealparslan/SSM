@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class COGsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: COGs
         public ActionResult Index()

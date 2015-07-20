@@ -5,36 +5,36 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="271edec82b3546f88ff4cf31d60dd220" Name="Diagram1">
-        <EntityTypeShape EntityType="SSMModel.Barcode" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Box" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.COG" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Delivery" Width="1.5" PointX="8.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.DeliveryList" Width="1.5" PointX="11" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.FulfilmentSKU" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Location" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.OrderList" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Order" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.ProductCategory" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.ProductColor" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Product" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.ProductSize" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.QuantityUnit" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.ShipmentList" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SSMModel.Shipment" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
-        <AssociationConnector Association="SSMModel.FK_Boxes_Barcodes" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_LocationBoxes" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_OrderListsBoxes" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ProductsBoxes" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_COGSProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_DeliveryDeliveryList" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_FulfilmentSKUProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_OrderListsOrders" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ProductCategoriesProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ProductColorProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ProductSizeProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ProductsShipmentList" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_QuantityUnitProducts" ManuallyRouted="false" />
-        <AssociationConnector Association="SSMModel.FK_ShipmentsShipmentLists" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SSMEntities.Barcode" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Box" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.COG" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Delivery" Width="1.5" PointX="8.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.DeliveryList" Width="1.5" PointX="11" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.FulfilmentSKU" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Location" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.OrderList" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Order" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.ProductCategory" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.ProductColor" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Product" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.ProductSize" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.QuantityUnit" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.ShipmentList" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSMEntities.Shipment" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="SSMEntities.FK_Boxes_Barcodes" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_LocationBoxes" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_OrderListsBoxes" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ProductsBoxes" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_COGSProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_DeliveryDeliveryList" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_FulfilmentSKUProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_OrderListsOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ProductCategoriesProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ProductColorProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ProductSizeProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ProductsShipmentList" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_QuantityUnitProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="SSMEntities.FK_ShipmentsShipmentLists" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

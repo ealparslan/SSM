@@ -12,7 +12,7 @@ namespace SSMWeb.Models
 {
     public class LocationsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: Locations
         public ActionResult Index()

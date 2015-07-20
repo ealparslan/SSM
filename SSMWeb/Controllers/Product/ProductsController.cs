@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class ProductsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         [Authorize]
         // GET: Products

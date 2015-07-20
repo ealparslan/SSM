@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class ProductColorsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: ProductColors
         public ActionResult Index()

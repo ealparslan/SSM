@@ -6,19 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
     public class BarcodesController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: Barcodes
         public ActionResult Index()
         {
-            var barcodes = db.Barcodes.Include(b => b.Box);
-            return View(barcodes.ToList());
+            return View(db.Barcodes.ToList());
         }
 
         // GET: Barcodes/Details/5
@@ -39,7 +37,6 @@ namespace SSMWeb.Models
         // GET: Barcodes/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber");
             return View();
         }
 
@@ -57,7 +54,6 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", barcode.Id);
             return View(barcode);
         }
 
@@ -73,7 +69,6 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", barcode.Id);
             return View(barcode);
         }
 
@@ -90,7 +85,6 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", barcode.Id);
             return View(barcode);
         }
 

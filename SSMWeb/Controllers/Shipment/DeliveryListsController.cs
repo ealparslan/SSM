@@ -12,7 +12,7 @@ namespace SSMWeb.Models
 {
     public class DeliveryListsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: DeliveryLists
         public ActionResult Index()

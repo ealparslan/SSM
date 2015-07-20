@@ -6,18 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
     public class OrderListsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: OrderLists
         public ActionResult Index()
         {
-            var orderLists = db.OrderLists.Include(o => o.Box);
+            var orderLists = db.OrderLists.Include(o => o.Box).Include(o => o.Order);
             return View(orderLists.ToList());
         }
 
@@ -39,7 +38,8 @@ namespace SSMWeb.Models
         // GET: OrderLists/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber");
+            ViewBag.BoxId = new SelectList(db.Boxes, "Id", "PONumber");
+            ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,BoxId,SoldQty")] OrderList orderList)
+        public ActionResult Create([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,BoxId,OrderId,SoldQty")] OrderList orderList)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,8 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", orderList.Id);
+            ViewBag.BoxId = new SelectList(db.Boxes, "Id", "PONumber", orderList.BoxId);
+            ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
             return View(orderList);
         }
 
@@ -73,7 +74,8 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", orderList.Id);
+            ViewBag.BoxId = new SelectList(db.Boxes, "Id", "PONumber", orderList.BoxId);
+            ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
             return View(orderList);
         }
 
@@ -82,7 +84,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,BoxId,SoldQty")] OrderList orderList)
+        public ActionResult Edit([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,BoxId,OrderId,SoldQty")] OrderList orderList)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +92,8 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.Boxes, "Id", "PONumber", orderList.Id);
+            ViewBag.BoxId = new SelectList(db.Boxes, "Id", "PONumber", orderList.BoxId);
+            ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
             return View(orderList);
         }
 

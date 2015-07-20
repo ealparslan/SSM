@@ -6,13 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
     public class OrdersController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: Orders
         public ActionResult Index()

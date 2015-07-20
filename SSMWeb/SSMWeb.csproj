@@ -165,16 +165,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\Order\BarcodesController.cs" />
-    <Compile Include="Controllers\Order\BoxesController.cs" />
-    <Compile Include="Controllers\Order\OrderListsController.cs" />
-    <Compile Include="Controllers\Order\OrdersController.cs" />
     <Compile Include="Models\Barcode.cs">
       <DependentUpon>SSMEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Order\BarcodesController.cs" />
     <Compile Include="Models\Box.cs">
       <DependentUpon>SSMEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Order\BoxesController.cs" />
     <Compile Include="Models\COG.cs">
       <DependentUpon>SSMEntityModel.tt</DependentUpon>
     </Compile>
@@ -196,8 +194,6 @@
     <Compile Include="Models\OrderList.cs">
       <DependentUpon>SSMEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Order\Barcode.cs" />
-    <Compile Include="Models\Order\Box.cs" />
     <Compile Include="Controllers\Utils\AccountController.cs" />
     <Compile Include="Controllers\Product\COGsController.cs" />
     <Compile Include="Controllers\Product\FulfilmentSKUsController.cs" />
@@ -210,6 +206,8 @@
     <Compile Include="Controllers\Product\QuantityUnitsController.cs" />
     <Compile Include="Controllers\Shipment\ShipmentListsController.cs" />
     <Compile Include="Controllers\Shipment\ShipmentsController.cs" />
+    <Compile Include="Controllers\Order\OrderListsController.cs" />
+    <Compile Include="Controllers\Order\OrdersController.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>SSMEntityModel.tt</DependentUpon>
     </Compile>
@@ -246,13 +244,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SSMEntityModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Barcodes\Barcode.aspx.cs">
-      <DependentUpon>Barcode.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Barcodes\Barcode.aspx.designer.cs">
-      <DependentUpon>Barcode.aspx</DependentUpon>
-    </Compile>
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -265,25 +256,10 @@
     </Compile>
     <Compile Include="Controllers\Order\LocationsController.cs" />
     <Compile Include="Models\Utils\AccountViewModels.cs" />
-    <Compile Include="Models\Product\COG.cs" />
     <Compile Include="Controllers\Shipment\DeliveriesController.cs" />
-    <Compile Include="Models\Shipment\Delivery.cs" />
-    <Compile Include="Models\Shipment\DeliveryList.cs" />
     <Compile Include="Controllers\Shipment\DeliveryListsController.cs" />
-    <Compile Include="Models\Product\FulfilmentSKU.cs" />
     <Compile Include="Models\Utils\IdentityModels.cs" />
-    <Compile Include="Models\Order\Location.cs" />
     <Compile Include="Models\Utils\ManageViewModels.cs" />
-    <Compile Include="Models\Product\Product.cs" />
-    <Compile Include="Models\Product\ProductCategory.cs" />
-    <Compile Include="Models\Product\ProductColor.cs" />
-    <Compile Include="Models\Product\ProductSize.cs" />
-    <Compile Include="Models\Product\QuantityUnit.cs" />
-    <Compile Include="Models\Shipment\Shipment.cs" />
-    <Compile Include="Models\Shipment\ShipmentList.cs" />
-    <Compile Include="Models\Utils\SSMModel.cs" />
-    <Compile Include="Models\Order\Order.cs" />
-    <Compile Include="Models\Order\OrderList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -431,7 +407,6 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Barcodes\Barcode.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

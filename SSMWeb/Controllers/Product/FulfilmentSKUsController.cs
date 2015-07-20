@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class FulfilmentSKUsController : Controller
     {
-        private SSMModel db = new SSMModel();
+        private SSMEntities db = new SSMEntities();
 
         // GET: FulfilmentSKUs
         public ActionResult Index()
