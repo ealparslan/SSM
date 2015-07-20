@@ -1,5 +1,5 @@
 using SSMWeb.Models;
-namespace DataLayerPrimitives
+namespace SSMWeb.Models
 {
     using System;
     using System.Data.Entity;

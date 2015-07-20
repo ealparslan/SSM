@@ -66,6 +66,16 @@
                             </ul>
                         </li>
 
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order Management<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                                <li>@Html.ActionLink("Boxes", "Index", "Boxes")</li>
+                                <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
+                            </ul>
+                        </li>
+
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>

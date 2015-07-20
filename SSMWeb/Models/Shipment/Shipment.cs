@@ -1,4 +1,4 @@
-namespace DataLayerPrimitives
+namespace SSMWeb.Models
 {
     using SSMWeb.Models;
     using System;
