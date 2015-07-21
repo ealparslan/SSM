@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,25 +6,28 @@ namespace SSMWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class OrderList
+    public partial class Order
     {
+        public Order()
+        {
+            OrderLists = new HashSet<OrderList>();
+        }
+
         public int Id { get; set; }
 
         [Required]
-        public int OrderId { get; set; }
+        public string OrderName { get; set; }
 
         public DateTime SoldDate { get; set; }
 
         [Required]
         public string SalesChannel { get; set; }
 
-        public int BoxId { get; set; }
+        public int OrderListId { get; set; }
 
         [Required]
-        public string SoldQty { get; set; }
+        public string OrderAmount { get; set; }
 
-        public virtual Box Box { get; set; }
-
-        public virtual Order Order { get; set; }
+        public virtual ICollection<OrderList> OrderLists { get; set; }
     }
 }

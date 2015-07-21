@@ -165,35 +165,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Models\Barcode.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\Order\BarcodesController.cs" />
-    <Compile Include="Models\Box.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\Order\BoxesController.cs" />
-    <Compile Include="Models\COG.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Delivery.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DeliveryList.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FulfilmentSKU.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Location.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderList.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Box.cs" />
     <Compile Include="Controllers\Utils\AccountController.cs" />
     <Compile Include="Controllers\Product\COGsController.cs" />
     <Compile Include="Controllers\Product\FulfilmentSKUsController.cs" />
@@ -206,44 +178,15 @@
     <Compile Include="Controllers\Product\QuantityUnitsController.cs" />
     <Compile Include="Controllers\Shipment\ShipmentListsController.cs" />
     <Compile Include="Controllers\Shipment\ShipmentsController.cs" />
-    <Compile Include="Controllers\Order\OrderListsController.cs" />
-    <Compile Include="Controllers\Order\OrdersController.cs" />
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductCategory.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductColor.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductSize.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QuantityUnit.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Shipment.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShipmentList.cs">
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SSMEntityModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SSMEntityModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SSMEntityModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SSMEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SSMEntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SSMEntityModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\Order\BoxesController.cs" />
+    <Compile Include="Models\COG.cs" />
+    <Compile Include="Models\Delivery.cs" />
+    <Compile Include="Models\DeliveryList.cs" />
+    <Compile Include="Models\FulfilmentSKU.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Controllers\Order\LocationsController.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderList.cs" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -254,7 +197,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\Order\LocationsController.cs" />
+    <Compile Include="Controllers\Order\OrderListsController.cs" />
+    <Compile Include="Controllers\Order\OrdersController.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\ProductColor.cs" />
+    <Compile Include="Models\ProductSize.cs" />
+    <Compile Include="Models\QuantityUnit.cs" />
+    <Compile Include="Models\Shipment.cs" />
+    <Compile Include="Models\ShipmentList.cs" />
+    <Compile Include="Models\SSMOrdinaryModel.cs" />
     <Compile Include="Models\Utils\AccountViewModels.cs" />
     <Compile Include="Controllers\Shipment\DeliveriesController.cs" />
     <Compile Include="Controllers\Shipment\DeliveryListsController.cs" />
@@ -278,6 +230,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\addNewItem.png" />
+    <Content Include="Images\box_barcode.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\details.png" />
     <Content Include="Images\edit.png" />
@@ -366,23 +319,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <EntityDeploy Include="Models\SSMEntityModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SSMEntityModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\SSMEntityModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SSMEntityModel.edmx</DependentUpon>
-      <LastGenOutput>SSMEntityModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\SSMEntityModel.edmx.diagram">
-      <DependentUpon>SSMEntityModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\SSMEntityModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SSMEntityModel.edmx</DependentUpon>
-      <LastGenOutput>SSMEntityModel.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTableInit.js" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
@@ -502,29 +438,20 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Barcodes\Create.cshtml" />
-    <Content Include="Views\Barcodes\Delete.cshtml" />
-    <Content Include="Views\Barcodes\Details.cshtml" />
-    <Content Include="Views\Barcodes\Edit.cshtml" />
-    <Content Include="Views\Barcodes\Index.cshtml" />
-    <Content Include="Views\Boxes\Create.cshtml" />
-    <Content Include="Views\Boxes\Delete.cshtml" />
-    <Content Include="Views\Boxes\Details.cshtml" />
-    <Content Include="Views\Boxes\Edit.cshtml" />
-    <Content Include="Views\Boxes\Index.cshtml" />
-    <Content Include="Views\OrderLists\Create.cshtml" />
-    <Content Include="Views\OrderLists\Delete.cshtml" />
-    <Content Include="Views\OrderLists\Details.cshtml" />
-    <Content Include="Views\OrderLists\Edit.cshtml" />
-    <Content Include="Views\OrderLists\Index.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\OrderLists\Create.cshtml" />
+    <Content Include="Views\OrderLists\Delete.cshtml" />
+    <Content Include="Views\OrderLists\Details.cshtml" />
+    <Content Include="Views\OrderLists\Edit.cshtml" />
+    <Content Include="Views\OrderLists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Boxes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,13 +8,17 @@ namespace SSMWeb.Models
 
     public partial class Delivery
     {
+        public Delivery()
+        {
+            DeliveryLists = new HashSet<DeliveryList>();
+        }
+
         public int Id { get; set; }
 
         public DateTime? Date { get; set; }
 
         public int ShipmentId { get; set; }
 
-        public virtual HashSet<DeliveryList> DeliveryLists { get; set; }
-
+        public virtual ICollection<DeliveryList> DeliveryLists { get; set; }
     }
 }

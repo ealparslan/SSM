@@ -7,7 +7,7 @@
 	INSERT INTO [dbo].[Deliveries] ([Date],[ShipmentId]) 
 		SELECT GETDATE(),Id FROM inserted WHERE IsDelivered = 1
 
-	INSERT INTO [dbo].[DeliveryLists] ([ProductId],[BoxQuantiy],[PartCapOfBox],[DeliveryId]) 
+	INSERT INTO [dbo].[DeliveryLists] ([ProductId],[BoxQuantity],[PartCapOfBox],[DeliveryId]) 
 		SELECT s.[ProductId],s.[BoxQuantity],s.[BoxCapacity],d.[Id] FROM [dbo].[ShipmentLists] s, [dbo].[Deliveries] d
 			WHERE s.ShipmentId = (SELECT Id FROM inserted WHERE IsDelivered = 1)
 					AND s.ShipmentId = d.ShipmentId

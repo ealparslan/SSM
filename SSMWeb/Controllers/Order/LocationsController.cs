@@ -6,13 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
     public class LocationsController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: Locations
         public ActionResult Index()

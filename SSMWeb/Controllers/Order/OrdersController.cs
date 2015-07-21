@@ -11,7 +11,7 @@ namespace SSMWeb.Models
 {
     public class OrdersController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: Orders
         public ActionResult Index()
@@ -121,6 +121,18 @@ namespace SSMWeb.Models
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        // GET: Orders/AddNewItem/2
+        public ActionResult AddNewItem(int? id)
+        {
+            return RedirectToAction("Create", "OrderLists", new { id = id });
+
+        }
+        // GET: Orders/ListItems/2
+        public ActionResult ListItems(int? id)
+        {
+            return RedirectToAction("Index", "OrdertLists");
         }
     }
 }

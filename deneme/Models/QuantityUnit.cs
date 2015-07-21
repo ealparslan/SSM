@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,11 @@ namespace SSMWeb.Models
 
     public partial class QuantityUnit
     {
+        public QuantityUnit()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -16,6 +21,6 @@ namespace SSMWeb.Models
         [Required]
         public string Description { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

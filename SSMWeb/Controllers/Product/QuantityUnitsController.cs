@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class QuantityUnitsController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: QuantityUnits
         public ActionResult Index()

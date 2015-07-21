@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +9,11 @@ namespace SSMWeb.Models
     [Table("COGS")]
     public partial class COG
     {
+        public COG()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int Id { get; set; }
 
         public string UnitPrice { get; set; }
@@ -17,6 +22,6 @@ namespace SSMWeb.Models
 
         public string SetPrice { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

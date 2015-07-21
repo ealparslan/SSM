@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,11 @@ namespace SSMWeb.Models
 
     public partial class FulfilmentSKU
     {
+        public FulfilmentSKU()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int Id { get; set; }
 
         public string SKU { get; set; }
@@ -20,6 +25,6 @@ namespace SSMWeb.Models
 
         public bool? IsDiscontinued { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

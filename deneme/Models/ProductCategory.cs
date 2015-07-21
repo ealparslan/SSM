@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,11 @@ namespace SSMWeb.Models
 
     public partial class ProductCategory
     {
+        public ProductCategory()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -16,6 +21,6 @@ namespace SSMWeb.Models
 
         public bool? IsEnabled { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

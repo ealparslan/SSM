@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,19 +10,14 @@ namespace SSMWeb.Models
     {
         public int Id { get; set; }
 
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
 
-        public int BoxQuantity { get; set; }
+        public string BoxQuantiy { get; set; }
 
         public string PartCapOfBox { get; set; }
 
         public int DeliveryId { get; set; }
 
         public virtual Delivery Delivery { get; set; }
-
-        public virtual Product Product { get; set; }
-
-        public virtual HashSet<Box> Boxes { get; set; }
-
     }
 }

@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,16 +6,23 @@ namespace SSMWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ProductCategory
+    public partial class ProductSize
     {
+        public ProductSize()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public string Aliases { get; set; }
+        public string Dimentions { get; set; }
+
+        public string Property1 { get; set; }
 
         public bool? IsEnabled { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

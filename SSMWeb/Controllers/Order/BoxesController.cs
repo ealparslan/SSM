@@ -11,12 +11,12 @@ namespace SSMWeb.Models
 {
     public class BoxesController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: Boxes
         public ActionResult Index()
         {
-            var boxes = db.Boxes.Include(b => b.Barcode).Include(b => b.Location).Include(b => b.Product);
+            var boxes = db.Boxes.Include(b => b.Location).Include(b => b.Product).Include(b => b.DeliveryList);
             return View(boxes.ToList());
         }
 
@@ -38,7 +38,6 @@ namespace SSMWeb.Models
         // GET: Boxes/Create
         public ActionResult Create()
         {
-            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber");
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name");
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             return View();
@@ -49,7 +48,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,BarcodeId,ProductId,PartCapOfBox,PartQtyUnitID,PartQtyLeft,BoxUnitOfTotal,BoxTotalOfTotal,PONumber,LocationID,DeliveryId")] Box box)
+        public ActionResult Create([Bind(Include = "Id,ProductId,PartCapOfBox,PartQtyUnitID,PartQtyLeft,BoxUnitOfTotal,BoxTotalOfTotal,PONumber,LocationID,OrderId,DeliveryListId,BarcodeType,BarcodeId,BarcodeImage")] Box box)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +57,6 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);
@@ -76,7 +74,6 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);
@@ -87,7 +84,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,BarcodeId,ProductId,PartCapOfBox,PartQtyUnitID,PartQtyLeft,BoxUnitOfTotal,BoxTotalOfTotal,PONumber,LocationID,DeliveryId")] Box box)
+        public ActionResult Edit([Bind(Include = "Id,ProductId,PartCapOfBox,PartQtyUnitID,PartQtyLeft,BoxUnitOfTotal,BoxTotalOfTotal,PONumber,LocationID,OrderId,DeliveryListId,BarcodeType,BarcodeId,BarcodeImage")] Box box)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +92,6 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BarcodeId = new SelectList(db.Barcodes, "Id", "CodeNumber", box.BarcodeId);
             ViewBag.LocationID = new SelectList(db.Locations, "Id", "Name", box.LocationID);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", box.ProductId);
             return View(box);

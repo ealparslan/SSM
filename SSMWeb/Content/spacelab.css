@@ -93,7 +93,14 @@ a {
      height: 40px;
      text-indent: -9999px; /* hides the link text */
 }
-
+.box
+{
+    background: url(../Images/box_barcode.png) no-repeat top left;
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     text-indent: -9999px; /* hides the link text */
+}
 
 a:active,
 a:hover {

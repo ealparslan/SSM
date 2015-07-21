@@ -12,7 +12,8 @@ namespace SSMWeb.Controllers
 {
     public class ShipmentsController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
+
 
         // GET: Shipments
         public ActionResult Index()

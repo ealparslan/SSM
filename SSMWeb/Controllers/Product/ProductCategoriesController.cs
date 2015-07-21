@@ -12,7 +12,7 @@ namespace SSMWeb.Controllers
 {
     public class ProductCategoriesController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: ProductCategories
         public ActionResult Index()

@@ -12,12 +12,12 @@ namespace SSMWeb.Models
 {
     public class DeliveryListsController : Controller
     {
-        private SSMEntities db = new SSMEntities();
+        private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: DeliveryLists
         public ActionResult Index()
         {
-            var deliveryLists = db.DeliveryLists.Include(d => d.Delivery);
+            var deliveryLists = db.DeliveryLists.Include(d => d.Delivery).Include(d => d.Product);
             return View(deliveryLists.ToList());
         }
 
@@ -48,7 +48,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProductId,BoxQuantiy,PartCapOfBox,DeliveryId")] DeliveryList deliveryList)
+        public ActionResult Create([Bind(Include = "Id,ProductId,BoxQuantity,PartCapOfBox,DeliveryId")] DeliveryList deliveryList)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ProductId,BoxQuantiy,PartCapOfBox,DeliveryId")] DeliveryList deliveryList)
+        public ActionResult Edit([Bind(Include = "Id,ProductId,BoxQuantity,PartCapOfBox,DeliveryId")] DeliveryList deliveryList)
         {
             if (ModelState.IsValid)
             {
@@ -118,6 +118,18 @@ namespace SSMWeb.Models
             db.DeliveryLists.Remove(deliveryList);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: DeliveryLists/Box/5
+        public ActionResult Box(int? id)
+        {
+            DeliveryList deliveryList = db.DeliveryLists.Find(id);
+            for (int i = 0 ; i < deliveryList.BoxQuantity ; i++)
+            {
+                // generate box
+            }
+            
+            return View(deliveryList);
         }
 
         protected override void Dispose(bool disposing)

@@ -1,4 +1,4 @@
-namespace SSMWeb.Models
+namespace deneme.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,16 +6,23 @@ namespace SSMWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class QuantityUnit
+    public partial class Location
     {
+        public Location()
+        {
+            Boxes = new HashSet<Box>();
+        }
+
         public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
 
+        public bool IsActive { get; set; }
+
         [Required]
         public string Description { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        public virtual ICollection<Box> Boxes { get; set; }
     }
 }
