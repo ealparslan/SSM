@@ -124,12 +124,9 @@ namespace SSMWeb.Models
         public ActionResult Box(int? id)
         {
             DeliveryList deliveryList = db.DeliveryLists.Find(id);
-            for (int i = 0 ; i < deliveryList.BoxQuantity ; i++)
-            {
-                // generate box
-            }
-            
-            return View(deliveryList);
+            BoxesController boxer = new BoxesController();
+            boxer.Create(deliveryList.ProductId, 12, deliveryList.Id, deliveryList.BoxQuantity);
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

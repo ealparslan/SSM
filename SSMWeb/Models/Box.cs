@@ -8,51 +8,44 @@ namespace SSMWeb.Models
 
     public partial class Box
     {
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Required]
         public int ProductId { get; set; }
 
-        [Required]
         public string PartCapOfBox { get; set; }
 
-        [Required]
         public string PartQtyUnitID { get; set; }
 
-        [Required]
         public string PartQtyLeft { get; set; }
 
-        [Required]
         public string BoxUnitOfTotal { get; set; }
 
-        [Required]
         public string BoxTotalOfTotal { get; set; }
 
-        [Required]
         public string PONumber { get; set; }
 
         public int LocationID { get; set; }
 
-        public int OrderId { get; set; }
-
         [Required]
-        public string DeliveryListId { get; set; }
+        public int DeliveryListId { get; set; }
 
         public string BarcodeType { get; set; }
 
-        public int? BarcodeId { get; set; }
+        [Required]
+        public string BarcodeId { get; set; }
 
         [Column(TypeName = "image")]
         public byte[] BarcodeImage { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
-        public Location Location { get; set; }
-
-        public virtual OrderList OrderList { get; set; }
+        public virtual Location Location { get; set; }
 
         public virtual DeliveryList DeliveryList { get; set; }
-
-        public virtual Order Order { get; set; }
 
     }
 }

@@ -23,7 +23,7 @@ namespace SSMWeb.Models
 
         public virtual HashSet<OrderList> OrderLists { get; set; }
 
-        public virtual HashSet<Box> Boxes { get; set; }
+        //public virtual HashSet<Box> Boxes { get; set; }
 
     }
 }

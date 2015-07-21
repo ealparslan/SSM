@@ -23,8 +23,9 @@ namespace SSMWeb.Models
         [Required]
         public string SoldQty { get; set; }
 
-        public virtual Box Box { get; set; }
+        //public virtual Box Box { get; set; }
 
         public virtual Order Order { get; set; }
+
     }
 }

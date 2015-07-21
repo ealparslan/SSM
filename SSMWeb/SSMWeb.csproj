@@ -41,6 +41,13 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Neodynamic.Web.MVC.Barcode">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Neodynamic\Barcode Professional for ASP.NET\v8.0\Bin\MVC\Neodynamic.Web.MVC.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Neodynamic.WebControls.BarcodeProfessional, Version=8.0.2000.0, Culture=neutral, PublicKeyToken=c6b33c3093a0d4cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Neodynamic\Barcode Professional for ASP.NET\v8.0\Bin\WebForms\Neodynamic.WebControls.BarcodeProfessional.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
