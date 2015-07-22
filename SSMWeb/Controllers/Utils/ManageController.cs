@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SSMWeb.Models;
 
-namespace SSMWeb.Controllers
+namespace SSMWeb.Models
 {
     [Authorize]
     public class ManageController : Controller

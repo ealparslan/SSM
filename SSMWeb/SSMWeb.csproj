@@ -172,6 +172,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\Utils\BarCode39.cs" />
     <Compile Include="Models\Box.cs" />
     <Compile Include="Controllers\Utils\AccountController.cs" />
     <Compile Include="Controllers\Product\COGsController.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Controllers\Order\LocationsController.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderList.cs" />
+    <Content Include="Barcode.aspx" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -220,6 +222,11 @@
     <Compile Include="Models\Utils\IdentityModels.cs" />
     <Compile Include="Models\Utils\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSMDataSetBoxBarcode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +333,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\FREE3OF9.TTF" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTableInit.js" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
@@ -455,6 +463,17 @@
     <Content Include="Views\OrderLists\Details.cshtml" />
     <Content Include="Views\OrderLists\Edit.cshtml" />
     <Content Include="Views\OrderLists\Index.cshtml" />
+    <Content Include="SSMDataSetBoxBarcode.xsc">
+      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+    </Content>
+    <None Include="SSMDataSetBoxBarcode.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SSMDataSetBoxBarcode.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="SSMDataSetBoxBarcode.xss">
+      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -462,7 +481,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB Scripts\Trigger_ShipmentDelivered.sql">

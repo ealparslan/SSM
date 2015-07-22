@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SSMWeb.Models;
 
-namespace SSMWeb.Controllers
+namespace SSMWeb.Models
 {
     public class COGsController : Controller
     {

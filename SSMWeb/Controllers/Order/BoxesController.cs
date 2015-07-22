@@ -77,7 +77,7 @@ namespace SSMWeb.Models
                         box.LocationID = locationId;
                         box.ProductId = productId;
                         box.BarcodeId = barcodePrefix + "-" + i.ToString();
-                        box.BarcodeImage = GetBarcodeImage(box.BarcodeId);
+                        box.BarcodeImage = getBarcodeImage(box.BarcodeId, "BoxId");
                         db.Boxes.Add(box);
                     }
                     db.SaveChanges();
@@ -87,7 +87,23 @@ namespace SSMWeb.Models
             return -1;
         }
 
-        private byte[] GetBarcodeImage(string barcodeSource)
+        private byte[] getBarcodeImage(string barcode, string title)
+        {
+            try
+            {
+                BarCode39 _barcode = new BarCode39();
+                int barSize = 64;
+                string fontFile = System.Web.HttpContext.Current.Server.MapPath("~/fonts/FREE3OF9.TTF");
+                return (_barcode.Code39(barcode, barSize, true, title, fontFile));
+            }
+            catch (Exception ex)
+            {
+                //ErrorLog.WriteErrorLog("Barcode", ex.ToString(), ex.Message);
+            }
+            return null;
+        }
+
+        private byte[] getBarcodeImage(string barcodeSource)
         {
             //Create an instance of BarcodeProfessional class
             using (Neodynamic.Web.MVC.Barcode.BarcodeProfessional bcp = new Neodynamic.Web.MVC.Barcode.BarcodeProfessional())
