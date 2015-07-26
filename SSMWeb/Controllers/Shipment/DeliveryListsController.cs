@@ -46,25 +46,14 @@ namespace SSMWeb.Models
             return View(deliveryList);
         }
 
-        //// GET: DeliveryLists/Create
-        //public ActionResult Create()
-        //{
-        //    ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date");
-        //    return View();
-        //}
-
+        // GET: DeliveryLists/Create/3
         public ActionResult Create(int id)
         {
+            Shipment shipment = db.Shipments.Find(id);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
-            ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date");
-            Delivery delivery = db.Deliveries.Find(id);
-            DeliveryList model = new DeliveryList
-            {
-                Delivery = delivery ,
-                DeliveryId = id ,
-            };
+            ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Shipment.ContainerName",id);
 
-            return View(model);
+            return View();
         }
 
         // POST: DeliveryLists/Create

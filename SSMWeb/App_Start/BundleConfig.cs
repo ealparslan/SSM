@@ -9,11 +9,9 @@ namespace SSMWeb
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui.js"));
 
-    /*        bundles.Add(new ScriptBundle("~/bundles/table").Include(
-                      "~/Scripts/jquery.dataTables.js",
-                      "~/Scripts/DataTableInit.js"));  */
 
             bundles.Add(new ScriptBundle("~/Scripts/datatables").Include(
                 "~/Scripts/jquery.dataTables.js",
@@ -37,18 +35,14 @@ namespace SSMWeb
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/datetime").Include(
-                    "~/Scripts/moment*",
-                    "~/Scripts/bootstrap-datetimepicker*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/spacelab.css",
-                      "~/Content/jquery-ui.css",
+                      //"~/Content/jquery-ui.css",
                       "~/Content/site.css",
                       "~/Content/select2.css",
-                      "~/Content/select2-bootstrap.css",
-                      "~/Content/bootstrap-datetimepicker.min.css"
+                      "~/Content/select2-bootstrap.css"
                       ));
         }
     }

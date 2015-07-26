@@ -10,8 +10,31 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/Scripts/datatables")
-    <script type="text/javascript" language="javascript">
 
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#DateBox1").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#DateBox2").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+    </script>
+
+
+
+    <script type="text/javascript" language="javascript">
         /* Table initialization */
         $(document).ready(function() {
             var table = $('#richtable').DataTable({
@@ -26,6 +49,8 @@
         });
 
     </script>
+
+
 
     </head>
     <body>

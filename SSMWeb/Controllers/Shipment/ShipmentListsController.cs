@@ -15,10 +15,19 @@ namespace SSMWeb.Models
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: ShipmentLists
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var shipmentLists = db.ShipmentLists.Include(s => s.Product).Include(s => s.Shipment);
-            return View(shipmentLists.ToList());
+            List<ShipmentList> selectedItems = new List<ShipmentList>();
+
+            foreach (ShipmentList item in shipmentLists)
+            {
+                if (item.ShipmentId == id)
+                {
+                    selectedItems.Add(item);
+                }
+            }
+            return View(selectedItems);
         }
 
         // GET: ShipmentLists/Details/5
@@ -48,16 +57,11 @@ namespace SSMWeb.Models
 
         public ActionResult Create(int id)
         {
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
-            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName");
             Shipment shipment = db.Shipments.Find(id);
-            ShipmentList model = new ShipmentList
-            {
-                Shipment = shipment , 
-                ShipmentId = id
-            };
-            
-            return View(model);
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", id);
+
+            return View();
         }
 
         //Action Function 
@@ -80,7 +84,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
             return View(shipmentList);
         }
@@ -98,7 +102,8 @@ namespace SSMWeb.Models
                 return HttpNotFound();
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
-            ViewBag.ShipmentId = shipmentList.Shipment.ContainerName; 
+            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
+            
             return View(shipmentList);
         }
 
@@ -116,7 +121,7 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
-            ViewBag.ShipmentId = shipmentList.Shipment.ContainerName; 
+            ViewBag.ShipmentId = new SelectList(db.Products, "Id", "shipmentList.Shipment.ContainerName", shipmentList.ShipmentId);
             return View(shipmentList);
         }
 

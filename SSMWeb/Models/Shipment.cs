@@ -26,7 +26,6 @@ namespace SSMWeb.Models
         public string UpdatedUserId { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         [DisplayName("Loaded On")]
         public DateTime? LoadedDate { get; set; }
 
@@ -90,6 +89,6 @@ namespace SSMWeb.Models
 
         public virtual HashSet<ShipmentList> ShipmentLists { get; set; }
 
-        public virtual Delivery Delivery { get; set; }
+        public virtual HashSet<Delivery> Deliveries { get; set; }
     }
 }
