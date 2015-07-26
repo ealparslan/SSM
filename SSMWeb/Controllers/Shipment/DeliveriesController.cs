@@ -17,7 +17,8 @@ namespace SSMWeb.Models
         // GET: Deliveries
         public ActionResult Index()
         {
-            return View(db.Deliveries.ToList());
+            var deliveries = db.Deliveries.Include(d => d.Shipment);
+            return View(deliveries.ToList());
         }
 
         // GET: Deliveries/Details/5
@@ -113,6 +114,18 @@ namespace SSMWeb.Models
             db.Deliveries.Remove(delivery);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: DeliveryLists/AddNewItem/2
+        public ActionResult AddNewItem(int? id)
+        {
+            return RedirectToAction("Create", "DeliveryLists", new { id = id });
+
+        }
+        // GET: DeliveryLists/ListItems/2
+        public ActionResult ListItems(int? id)
+        {
+            return RedirectToAction("Index", "DeliveryLists", new { id = id });
         }
 
         protected override void Dispose(bool disposing)

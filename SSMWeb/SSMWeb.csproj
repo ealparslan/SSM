@@ -474,10 +474,10 @@
     <Content Include="SSMDataSetBoxBarcode.xss">
       <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\Boxes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Boxes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

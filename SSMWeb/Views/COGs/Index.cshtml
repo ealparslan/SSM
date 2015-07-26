@@ -17,10 +17,16 @@
                 @Html.DisplayNameFor(model => model.UnitPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PartQtyUnitID)
+                @Html.DisplayNameFor(model => model.MinQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxQty)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SetPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.SKU)
             </th>
         </tr>
     </thead>
@@ -38,10 +44,16 @@
                     @Html.DisplayFor(modelItem => item.UnitPrice)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PartQtyUnitID)
+                    @Html.DisplayFor(modelItem => item.MinQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxQty)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.SetPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.SKU)
                 </td>
             </tr>
         }

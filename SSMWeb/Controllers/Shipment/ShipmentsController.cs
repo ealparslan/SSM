@@ -42,10 +42,13 @@ namespace SSMWeb.Models
             String[] destCities = { "Los Angeles", "New York", "San Francisco" }; 
             ViewBag.destCities = new SelectList(destCities);
 
+            String[] containerTypes = { " ", "20", "40" };
+            ViewBag.containerTypes = new SelectList(containerTypes);
+
             Shipment model = new Shipment
             {
                 CreatedUserId = User.Identity.Name ,
-                CreatedDate =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
+                CreatedDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second)
             };
             return View(model);
 
@@ -80,7 +83,13 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            shipment.UpdatedDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            String[] destCities = { "Los Angeles", "New York", "San Francisco" };
+            ViewBag.destCities = new SelectList(destCities);
+
+            String[] containerTypes = { " ", "20", "40" };
+            ViewBag.containerTypes = new SelectList(containerTypes);
+
+            shipment.UpdatedDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             shipment.UpdatedUserId = User.Identity.Name;
             return View(shipment);
         }
@@ -136,7 +145,7 @@ namespace SSMWeb.Models
         // GET: Shipments/ListItems/2
         public ActionResult ListItems(int? id)
         {
-            return RedirectToAction("Index", "ShipmentLists");
+            return RedirectToAction("Index", "ShipmentLists", new { id = id });
         }
 
         protected override void Dispose(bool disposing)

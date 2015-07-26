@@ -16,7 +16,7 @@ namespace SSMWeb.Models
         // GET: Boxes
         public ActionResult Index()
         {
-            var boxes = db.Boxes.Include(b => b.Location).Include(b => b.Product).Include(b => b.DeliveryList);
+            var boxes = db.Boxes.Include(b => b.Product).Include(b => b.DeliveryList);
             return View(boxes.ToList());
         }
 
@@ -62,21 +62,24 @@ namespace SSMWeb.Models
             return View(box);
         }
 
-        public int Create(int productId,int locationId, int deliveryListId, int boxQty)
+        public int Create(int productId,int locationId, int deliveryListId, int boxQty, int partCapOfBox, int partQtyUnitId , int partQtyLeft)
         {
 
                 if (ModelState.IsValid)
                 {
-                    //Box box;
-                    string barcodePrefix = deliveryListId.ToString() + "-" + productId.ToString() + "-" + locationId.ToString();
-                    
+                                        
                     for (int i = 1; i <= boxQty; i++)
                     {
                         Box box = new Box();
                         box.DeliveryListId = deliveryListId;
                         box.LocationID = locationId;
                         box.ProductId = productId;
-                        box.BarcodeId = barcodePrefix + "-" + i.ToString();
+                        box.PartCapOfBox = partCapOfBox;
+                        box.PartQtyUnitID = partQtyUnitId;
+                        box.PartQtyLeft = partQtyLeft;
+                        box.BoxUnitOfTotal = i;
+                        box.BoxTotalOfTotal = boxQty;
+                        box.BarcodeId = deliveryListId + "-" + i.ToString();
                         box.BarcodeImage = getBarcodeImage(box.BarcodeId, "BoxId");
                         db.Boxes.Add(box);
                     }

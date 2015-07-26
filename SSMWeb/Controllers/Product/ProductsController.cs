@@ -18,10 +18,11 @@ namespace SSMWeb.Models
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.COG).Include(p => p.FulfilmentSKU).Include(p => p.ProductCategory).Include(p => p.ProductColor).Include(p => p.ProductSize).Include(p => p.QuantityUnit);
+            var products = db.Products./*Include(p => p.FulfilmentSKU).*/Include(p => p.ProductCategory).Include(p => p.ProductColor).Include(p => p.ProductSize).Include(p => p.QuantityUnit);
             return View(products.ToList());
         }
 
+        [Authorize]
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,10 +38,10 @@ namespace SSMWeb.Models
             return View(product);
         }
 
+        [Authorize(Roles = "Administrator")]
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.COGSId = new SelectList(db.COGS, "Id", "UnitPrice");
             ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU");
             ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name");
             ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name");
@@ -49,12 +50,14 @@ namespace SSMWeb.Models
             return View();
         }
 
+
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,COGSId")] Product product)
+        public ActionResult Create([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +66,6 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
 
-            ViewBag.COGSId = new SelectList(db.COGS, "Id", "UnitPrice", product.COGSId);
             ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
             ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
             ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
@@ -73,6 +75,7 @@ namespace SSMWeb.Models
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,7 +87,6 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.COGSId = new SelectList(db.COGS, "Id", "UnitPrice", product.COGSId);
             ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
             ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
             ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
@@ -96,9 +98,10 @@ namespace SSMWeb.Models
         // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,COGSId")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +109,6 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.COGSId = new SelectList(db.COGS, "Id", "UnitPrice", product.COGSId);
             ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
             ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
             ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
@@ -116,6 +118,7 @@ namespace SSMWeb.Models
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -131,6 +134,7 @@ namespace SSMWeb.Models
         }
 
         // POST: Products/Delete/5
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

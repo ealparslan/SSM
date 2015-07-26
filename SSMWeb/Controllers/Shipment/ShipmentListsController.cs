@@ -46,12 +46,25 @@ namespace SSMWeb.Models
         }
         */
 
-        public ActionResult Create(int? id)
+        public ActionResult Create(int id)
         {
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
-            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", db.Shipments.Find(id).Id);
+            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName");
+            Shipment shipment = db.Shipments.Find(id);
+            ShipmentList model = new ShipmentList
+            {
+                Shipment = shipment , 
+                ShipmentId = id
+            };
+            
+            return View(model);
+        }
 
-            return View();
+        //Action Function 
+        [HttpPost]
+        public int SelectAction(int id)
+        {
+            return db.Products.Find(id).BoxCapacity;
         }
 
         // POST: ShipmentLists/Create
@@ -67,7 +80,6 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
             return View(shipmentList);
@@ -86,7 +98,7 @@ namespace SSMWeb.Models
                 return HttpNotFound();
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
-            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
+            ViewBag.ShipmentId = shipmentList.Shipment.ContainerName; 
             return View(shipmentList);
         }
 
@@ -104,7 +116,7 @@ namespace SSMWeb.Models
                 return RedirectToAction("Index");
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
-            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
+            ViewBag.ShipmentId = shipmentList.Shipment.ContainerName; 
             return View(shipmentList);
         }
 

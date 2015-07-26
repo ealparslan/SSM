@@ -20,11 +20,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PartQtyUnitID)
+            @Html.DisplayNameFor(model => model.MinQty)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PartQtyUnitID)
+            @Html.DisplayFor(model => model.MinQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxQty)
         </dd>
 
         <dt>
@@ -33,6 +41,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.SetPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.SKU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.SKU)
         </dd>
 
     </dl>

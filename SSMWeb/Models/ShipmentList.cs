@@ -2,6 +2,7 @@ namespace SSMWeb.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -10,12 +11,16 @@ namespace SSMWeb.Models
     {
         public int Id { get; set; }
 
+        [DisplayName("Product Id")]
         public int ProductId { get; set; }
 
+        [DisplayName("Box Capacity")]
         public string BoxCapacity { get; set; }
 
+        [DisplayName("Box Quantity")]
         public string BoxQuantity { get; set; }
 
+        [DisplayName("Shipment Id")]
         public int ShipmentId { get; set; }
 
         public virtual Shipment Shipment { get; set; }

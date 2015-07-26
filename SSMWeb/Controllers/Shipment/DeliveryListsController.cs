@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SSMWeb.Models;
+using System.Collections;
 
 namespace SSMWeb.Models
 {
@@ -15,10 +16,19 @@ namespace SSMWeb.Models
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: DeliveryLists
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var deliveryLists = db.DeliveryLists.Include(d => d.Delivery).Include(d => d.Product);
-            return View(deliveryLists.ToList());
+            List<DeliveryList> selectedItems = new List<DeliveryList>();
+            
+            foreach (DeliveryList item in deliveryLists)
+            {
+                if (item.DeliveryId == id)
+                {
+                    selectedItems.Add(item);
+                }
+            }
+            return View(selectedItems);
         }
 
         // GET: DeliveryLists/Details/5
@@ -36,11 +46,25 @@ namespace SSMWeb.Models
             return View(deliveryList);
         }
 
-        // GET: DeliveryLists/Create
-        public ActionResult Create()
+        //// GET: DeliveryLists/Create
+        //public ActionResult Create()
+        //{
+        //    ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date");
+        //    return View();
+        //}
+
+        public ActionResult Create(int id)
         {
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date");
-            return View();
+            Delivery delivery = db.Deliveries.Find(id);
+            DeliveryList model = new DeliveryList
+            {
+                Delivery = delivery ,
+                DeliveryId = id ,
+            };
+
+            return View(model);
         }
 
         // POST: DeliveryLists/Create
@@ -56,8 +80,9 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
+            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "Date", deliveryList.DeliveryId);
 
-            ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date", deliveryList.DeliveryId);
             return View(deliveryList);
         }
 
@@ -73,7 +98,8 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date", deliveryList.DeliveryId);
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
+            ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Shipment.ContainerName", deliveryList.DeliveryId);
             return View(deliveryList);
         }
 
@@ -90,6 +116,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date", deliveryList.DeliveryId);
             return View(deliveryList);
         }
@@ -125,7 +152,7 @@ namespace SSMWeb.Models
         {
             DeliveryList deliveryList = db.DeliveryLists.Find(id);
             BoxesController boxer = new BoxesController();
-            boxer.Create(deliveryList.ProductId, 12, deliveryList.Id, deliveryList.BoxQuantity);
+            boxer.Create(deliveryList.ProductId, 0, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID,deliveryList.PartCapOfBox);
             return RedirectToAction("Index");
         }
 

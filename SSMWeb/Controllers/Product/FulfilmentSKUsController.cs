@@ -10,6 +10,7 @@ using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
+    [Authorize]
     public class FulfilmentSKUsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
@@ -36,6 +37,7 @@ namespace SSMWeb.Models
         }
 
         // GET: FulfilmentSKUs/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +46,7 @@ namespace SSMWeb.Models
         // POST: FulfilmentSKUs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,SKU,Name,SCName,ASIN,IsDiscontinued")] FulfilmentSKU fulfilmentSKU)
@@ -59,6 +62,7 @@ namespace SSMWeb.Models
         }
 
         // GET: FulfilmentSKUs/Edit/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +80,7 @@ namespace SSMWeb.Models
         // POST: FulfilmentSKUs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,SKU,Name,SCName,ASIN,IsDiscontinued")] FulfilmentSKU fulfilmentSKU)
@@ -90,6 +95,7 @@ namespace SSMWeb.Models
         }
 
         // GET: FulfilmentSKUs/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +111,7 @@ namespace SSMWeb.Models
         }
 
         // POST: FulfilmentSKUs/Delete/5
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

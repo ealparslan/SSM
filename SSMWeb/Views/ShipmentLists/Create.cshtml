@@ -8,6 +8,21 @@ $.getScript('http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js'
 $(document).ready(function() {});
 </script>
 
+<script type="text/javascript">
+    function SelectAction(id) {
+        $.ajax({
+            url: '@Url.Action("SelectAction", "ShipmentLists")',
+            type: "POST",
+            data: { "id": id },
+            "success": function (data) {
+                if (data != null) {
+                    $("#BoxCapacity").val(data);
+                }
+            },
+        });
+    }
+</script>
+
 @{
     ViewBag.Title = "Create";
 }
@@ -26,7 +41,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.ProductId, "Product SKU", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-               @Html.DropDownList("ProductId", null, htmlAttributes: new {id="select2", @class = "form-control" })
+               @Html.DropDownList("ProductId", null,"Select product SKU", htmlAttributes: new {id="select2", @class = "form-control", onchange = "SelectAction(this.value);" })
                 @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
                 </div>
         </div>
@@ -34,7 +49,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.BoxCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BoxCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.BoxCapacity, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
                 @Html.ValidationMessageFor(model => model.BoxCapacity, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +65,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.ShipmentId, "Shipment", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShipmentId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ShipmentId",null, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
                 @Html.ValidationMessageFor(model => model.ShipmentId, "", new { @class = "text-danger" })
             </div>
         </div>

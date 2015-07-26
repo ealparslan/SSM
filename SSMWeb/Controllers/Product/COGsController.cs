@@ -17,7 +17,8 @@ namespace SSMWeb.Models
         // GET: COGs
         public ActionResult Index()
         {
-            return View(db.COGS.ToList());
+            var COGS = db.COGS.Include(c => c.Product);
+            return View(COGS.ToList());
         }
 
         // GET: COGs/Details/5
@@ -38,6 +39,7 @@ namespace SSMWeb.Models
         // GET: COGs/Create
         public ActionResult Create()
         {
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UnitPrice,PartQtyUnitID,SetPrice")] COG cOG)
+        public ActionResult Create([Bind(Include = "Id,UnitPrice,MinQty,MaxQty,SetPrice,ProductId")] COG cOG)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +56,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 
@@ -70,6 +72,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 
@@ -78,7 +81,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,UnitPrice,PartQtyUnitID,SetPrice")] COG cOG)
+        public ActionResult Edit([Bind(Include = "Id,UnitPrice,MinQty,MaxQty,SetPrice,ProductId")] COG cOG)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +89,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 

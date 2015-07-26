@@ -4,10 +4,33 @@
     ViewBag.Title = "Edit";
 }
 
+<script>
+//Select2
+$.getScript('http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js',function(){
+  var select = $('#select2').select2();
+});
+$(document).ready(function() {});
+</script>
+
+<script type="text/javascript">
+    function SelectAction(id) {
+        $.ajax({
+            url: '@Url.Action("SelectAction", "ShipmentLists")',
+            type: "POST",
+            data: { "id": id },
+            "success": function (data) {
+                if (data != null) {
+                    $("#BoxCapacity").val(data);
+                }
+            },
+        });
+    }
+</script>
+
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("SelectAction", "Products", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
@@ -18,9 +41,9 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProductId, "ProductId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ProductId, "Product SKU", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProductId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ProductId", null, "Select product SKU", htmlAttributes: new { id = "select2", @class = "form-control", onchange = "SelectAction(this.value);" })
                 @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,7 +51,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BoxCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BoxCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.BoxCapacity, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
                 @Html.ValidationMessageFor(model => model.BoxCapacity, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,10 +65,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ShipmentId, "ShipmentId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ShipmentId, "Shipment", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShipmentId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ShipmentId, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Shipment.ContainerName, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.Shipment.ContainerName, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -4,6 +4,14 @@
     ViewBag.Title = "Create";
 }
 
+<script>
+//Select2
+$.getScript('http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js',function(){
+  var select = $('#select2').select2();
+});
+$(document).ready(function() {});
+</script>
+
 <h2>Create</h2>
 
 
@@ -24,10 +32,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PartQtyUnitID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MinQty, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PartQtyUnitID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PartQtyUnitID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.MinQty, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MinQty, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxQty, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxQty, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaxQty, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -36,6 +52,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SetPrice, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SetPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProductId", null, htmlAttributes: new { id = "select2", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
             </div>
         </div>
 

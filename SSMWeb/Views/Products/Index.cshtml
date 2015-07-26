@@ -34,17 +34,17 @@
         <th>
             @Html.DisplayNameFor(model => model.QuantityUnit.Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COG.UnitPrice)
-        </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FulfilmentSKU.SKU)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.ParentId)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.IsDiscontinued)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoxCapacity)
         </th>
     </tr>
   </thead>
@@ -80,17 +80,17 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.QuantityUnit.Name)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.COG.UnitPrice)
-                </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.FulfilmentSKU.SKU)
-                </td>
-                <td>
+                </td>*@
+                @*<td>
                     @Html.DisplayFor(modelItem => item.ParentId)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.IsDiscontinued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoxCapacity)
                 </td>
             </tr>
         }
