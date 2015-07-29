@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SSMDataSet" targetNamespace="http://tempuri.org/SSMDataSet.xsd" xmlns:mstns="http://tempuri.org/SSMDataSet.xsd" xmlns="http://tempuri.org/SSMDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="SSMConnectionStringForReport" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SSMConnectionStringForReport (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.SSMConnectionStringForReport.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BarcodesTableAdapter" GeneratorDataComponentClassName="V_BarcodesTableAdapter" Name="V_Barcodes" UserDataComponentName="V_BarcodesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SSMConnectionStringForReport (Web.config)" DbObjectName="SSM.dbo.V_Barcodes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SKU, BoxUnitOfTotal, BoxTotalOfTotal, BarcodeId, BarcodeImage, PartCapOfBox, PartQtyUnitID, PartQtyLeft, ContainerName, Date FROM dbo.V_Barcodes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SKU" DataSetColumn="SKU" />
+              <Mapping SourceColumn="BoxUnitOfTotal" DataSetColumn="BoxUnitOfTotal" />
+              <Mapping SourceColumn="BoxTotalOfTotal" DataSetColumn="BoxTotalOfTotal" />
+              <Mapping SourceColumn="BarcodeId" DataSetColumn="BarcodeId" />
+              <Mapping SourceColumn="BarcodeImage" DataSetColumn="BarcodeImage" />
+              <Mapping SourceColumn="PartCapOfBox" DataSetColumn="PartCapOfBox" />
+              <Mapping SourceColumn="PartQtyUnitID" DataSetColumn="PartQtyUnitID" />
+              <Mapping SourceColumn="PartQtyLeft" DataSetColumn="PartQtyLeft" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SSMDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SSMDataSet" msprop:Generator_UserDSName="SSMDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_Barcodes" msprop:Generator_TableClassName="V_BarcodesDataTable" msprop:Generator_TableVarName="tableV_Barcodes" msprop:Generator_TablePropName="V_Barcodes" msprop:Generator_RowDeletingName="V_BarcodesRowDeleting" msprop:Generator_RowChangingName="V_BarcodesRowChanging" msprop:Generator_RowEvHandlerName="V_BarcodesRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BarcodesRowDeleted" msprop:Generator_UserTableName="V_Barcodes" msprop:Generator_RowChangedName="V_BarcodesRowChanged" msprop:Generator_RowEvArgName="V_BarcodesRowChangeEvent" msprop:Generator_RowClassName="V_BarcodesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SKU" msprop:Generator_ColumnVarNameInTable="columnSKU" msprop:Generator_ColumnPropNameInRow="SKU" msprop:Generator_ColumnPropNameInTable="SKUColumn" msprop:Generator_UserColumnName="SKU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BoxUnitOfTotal" msprop:Generator_ColumnVarNameInTable="columnBoxUnitOfTotal" msprop:Generator_ColumnPropNameInRow="BoxUnitOfTotal" msprop:Generator_ColumnPropNameInTable="BoxUnitOfTotalColumn" msprop:Generator_UserColumnName="BoxUnitOfTotal" type="xs:int" minOccurs="0" />
+              <xs:element name="BoxTotalOfTotal" msprop:Generator_ColumnVarNameInTable="columnBoxTotalOfTotal" msprop:Generator_ColumnPropNameInRow="BoxTotalOfTotal" msprop:Generator_ColumnPropNameInTable="BoxTotalOfTotalColumn" msprop:Generator_UserColumnName="BoxTotalOfTotal" type="xs:int" minOccurs="0" />
+              <xs:element name="BarcodeId" msprop:Generator_ColumnVarNameInTable="columnBarcodeId" msprop:Generator_ColumnPropNameInRow="BarcodeId" msprop:Generator_ColumnPropNameInTable="BarcodeIdColumn" msprop:Generator_UserColumnName="BarcodeId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BarcodeImage" msprop:Generator_ColumnVarNameInTable="columnBarcodeImage" msprop:Generator_ColumnPropNameInRow="BarcodeImage" msprop:Generator_ColumnPropNameInTable="BarcodeImageColumn" msprop:Generator_UserColumnName="BarcodeImage" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="PartCapOfBox" msprop:Generator_ColumnVarNameInTable="columnPartCapOfBox" msprop:Generator_ColumnPropNameInRow="PartCapOfBox" msprop:Generator_ColumnPropNameInTable="PartCapOfBoxColumn" msprop:Generator_UserColumnName="PartCapOfBox" type="xs:int" minOccurs="0" />
+              <xs:element name="PartQtyUnitID" msprop:Generator_ColumnVarNameInTable="columnPartQtyUnitID" msprop:Generator_ColumnPropNameInRow="PartQtyUnitID" msprop:Generator_ColumnPropNameInTable="PartQtyUnitIDColumn" msprop:Generator_UserColumnName="PartQtyUnitID" type="xs:int" minOccurs="0" />
+              <xs:element name="PartQtyLeft" msprop:Generator_ColumnVarNameInTable="columnPartQtyLeft" msprop:Generator_ColumnPropNameInRow="PartQtyLeft" msprop:Generator_ColumnPropNameInTable="PartQtyLeftColumn" msprop:Generator_UserColumnName="PartQtyLeft" type="xs:int" minOccurs="0" />
+              <xs:element name="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" msprop:Generator_UserColumnName="ContainerName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -71,6 +71,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
+            ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", delivery.ShipmentId);
             return View(delivery);
         }
 

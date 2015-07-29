@@ -118,7 +118,7 @@ namespace SSMWeb.Models
             {
                 db.Entry(shipmentList).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Shipments");
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Products, "Id", "shipmentList.Shipment.ContainerName", shipmentList.ShipmentId);

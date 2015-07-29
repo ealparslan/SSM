@@ -20,17 +20,17 @@ namespace SSMWeb {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SSMDataSetBoxBarcode")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SSMDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SSMDataSetBoxBarcode : global::System.Data.DataSet {
+    public partial class SSMDataSet : global::System.Data.DataSet {
         
-        private BoxesDataTable tableBoxes;
+        private V_BarcodesDataTable tableV_Barcodes;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SSMDataSetBoxBarcode() {
+        public SSMDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SSMWeb {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected SSMDataSetBoxBarcode(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SSMDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SSMWeb {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Boxes"] != null)) {
-                    base.Tables.Add(new BoxesDataTable(ds.Tables["Boxes"]));
+                if ((ds.Tables["V_Barcodes"] != null)) {
+                    base.Tables.Add(new V_BarcodesDataTable(ds.Tables["V_Barcodes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SSMWeb {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BoxesDataTable Boxes {
+        public V_BarcodesDataTable V_Barcodes {
             get {
-                return this.tableBoxes;
+                return this.tableV_Barcodes;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SSMWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SSMDataSetBoxBarcode cln = ((SSMDataSetBoxBarcode)(base.Clone()));
+            SSMDataSet cln = ((SSMDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SSMWeb {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Boxes"] != null)) {
-                    base.Tables.Add(new BoxesDataTable(ds.Tables["Boxes"]));
+                if ((ds.Tables["V_Barcodes"] != null)) {
+                    base.Tables.Add(new V_BarcodesDataTable(ds.Tables["V_Barcodes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SSMWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBoxes = ((BoxesDataTable)(base.Tables["Boxes"]));
+            this.tableV_Barcodes = ((V_BarcodesDataTable)(base.Tables["V_Barcodes"]));
             if ((initTable == true)) {
-                if ((this.tableBoxes != null)) {
-                    this.tableBoxes.InitVars();
+                if ((this.tableV_Barcodes != null)) {
+                    this.tableV_Barcodes.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SSMWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SSMDataSetBoxBarcode";
+            this.DataSetName = "SSMDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SSMDataSetBoxBarcode.xsd";
+            this.Namespace = "http://tempuri.org/SSMDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBoxes = new BoxesDataTable();
-            base.Tables.Add(this.tableBoxes);
+            this.tableV_Barcodes = new V_BarcodesDataTable();
+            base.Tables.Add(this.tableV_Barcodes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeBoxes() {
+        private bool ShouldSerializeV_Barcodes() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SSMWeb {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SSMDataSetBoxBarcode ds = new SSMDataSetBoxBarcode();
+            SSMDataSet ds = new SSMDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,18 +270,24 @@ namespace SSMWeb {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void BoxesRowChangeEventHandler(object sender, BoxesRowChangeEvent e);
+        public delegate void V_BarcodesRowChangeEventHandler(object sender, V_BarcodesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BoxesDataTable : global::System.Data.TypedTableBase<BoxesRow> {
+        public partial class V_BarcodesDataTable : global::System.Data.TypedTableBase<V_BarcodesRow> {
             
-            private global::System.Data.DataColumn columnId;
+            private global::System.Data.DataColumn columnSKU;
             
-            private global::System.Data.DataColumn columnProductId;
+            private global::System.Data.DataColumn columnBoxUnitOfTotal;
+            
+            private global::System.Data.DataColumn columnBoxTotalOfTotal;
+            
+            private global::System.Data.DataColumn columnBarcodeId;
+            
+            private global::System.Data.DataColumn columnBarcodeImage;
             
             private global::System.Data.DataColumn columnPartCapOfBox;
             
@@ -289,26 +295,14 @@ namespace SSMWeb {
             
             private global::System.Data.DataColumn columnPartQtyLeft;
             
-            private global::System.Data.DataColumn columnBoxUnitOfTotal;
+            private global::System.Data.DataColumn columnContainerName;
             
-            private global::System.Data.DataColumn columnBoxTotalOfTotal;
-            
-            private global::System.Data.DataColumn columnPONumber;
-            
-            private global::System.Data.DataColumn columnLocationID;
-            
-            private global::System.Data.DataColumn columnDeliveryListId;
-            
-            private global::System.Data.DataColumn columnBarcodeType;
-            
-            private global::System.Data.DataColumn columnBarcodeId;
-            
-            private global::System.Data.DataColumn columnBarcodeImage;
+            private global::System.Data.DataColumn columnDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesDataTable() {
-                this.TableName = "Boxes";
+            public V_BarcodesDataTable() {
+                this.TableName = "V_Barcodes";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -316,7 +310,7 @@ namespace SSMWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BoxesDataTable(global::System.Data.DataTable table) {
+            internal V_BarcodesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -333,24 +327,48 @@ namespace SSMWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected BoxesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected V_BarcodesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn SKUColumn {
                 get {
-                    return this.columnId;
+                    return this.columnSKU;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProductIdColumn {
+            public global::System.Data.DataColumn BoxUnitOfTotalColumn {
                 get {
-                    return this.columnProductId;
+                    return this.columnBoxUnitOfTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BoxTotalOfTotalColumn {
+                get {
+                    return this.columnBoxTotalOfTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BarcodeIdColumn {
+                get {
+                    return this.columnBarcodeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BarcodeImageColumn {
+                get {
+                    return this.columnBarcodeImage;
                 }
             }
             
@@ -380,65 +398,17 @@ namespace SSMWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BoxUnitOfTotalColumn {
+            public global::System.Data.DataColumn ContainerNameColumn {
                 get {
-                    return this.columnBoxUnitOfTotal;
+                    return this.columnContainerName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BoxTotalOfTotalColumn {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    return this.columnBoxTotalOfTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PONumberColumn {
-                get {
-                    return this.columnPONumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LocationIDColumn {
-                get {
-                    return this.columnLocationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DeliveryListIdColumn {
-                get {
-                    return this.columnDeliveryListId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BarcodeTypeColumn {
-                get {
-                    return this.columnBarcodeType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BarcodeIdColumn {
-                get {
-                    return this.columnBarcodeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BarcodeImageColumn {
-                get {
-                    return this.columnBarcodeImage;
+                    return this.columnDate;
                 }
             }
             
@@ -453,64 +423,54 @@ namespace SSMWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRow this[int index] {
+            public V_BarcodesRow this[int index] {
                 get {
-                    return ((BoxesRow)(this.Rows[index]));
+                    return ((V_BarcodesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BoxesRowChangeEventHandler BoxesRowChanging;
+            public event V_BarcodesRowChangeEventHandler V_BarcodesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BoxesRowChangeEventHandler BoxesRowChanged;
+            public event V_BarcodesRowChangeEventHandler V_BarcodesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BoxesRowChangeEventHandler BoxesRowDeleting;
+            public event V_BarcodesRowChangeEventHandler V_BarcodesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BoxesRowChangeEventHandler BoxesRowDeleted;
+            public event V_BarcodesRowChangeEventHandler V_BarcodesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddBoxesRow(BoxesRow row) {
+            public void AddV_BarcodesRow(V_BarcodesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRow AddBoxesRow(int ProductId, string PartCapOfBox, string PartQtyUnitID, string PartQtyLeft, string BoxUnitOfTotal, string BoxTotalOfTotal, string PONumber, int LocationID, int DeliveryListId, string BarcodeType, string BarcodeId, byte[] BarcodeImage) {
-                BoxesRow rowBoxesRow = ((BoxesRow)(this.NewRow()));
+            public V_BarcodesRow AddV_BarcodesRow(string SKU, int BoxUnitOfTotal, int BoxTotalOfTotal, string BarcodeId, byte[] BarcodeImage, int PartCapOfBox, int PartQtyUnitID, int PartQtyLeft, string ContainerName, System.DateTime Date) {
+                V_BarcodesRow rowV_BarcodesRow = ((V_BarcodesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        ProductId,
+                        SKU,
+                        BoxUnitOfTotal,
+                        BoxTotalOfTotal,
+                        BarcodeId,
+                        BarcodeImage,
                         PartCapOfBox,
                         PartQtyUnitID,
                         PartQtyLeft,
-                        BoxUnitOfTotal,
-                        BoxTotalOfTotal,
-                        PONumber,
-                        LocationID,
-                        DeliveryListId,
-                        BarcodeType,
-                        BarcodeId,
-                        BarcodeImage};
-                rowBoxesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBoxesRow);
-                return rowBoxesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRow FindById(int Id) {
-                return ((BoxesRow)(this.Rows.Find(new object[] {
-                            Id})));
+                        ContainerName,
+                        Date};
+                rowV_BarcodesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowV_BarcodesRow);
+                return rowV_BarcodesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BoxesDataTable cln = ((BoxesDataTable)(base.Clone()));
+                V_BarcodesDataTable cln = ((V_BarcodesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -518,101 +478,76 @@ namespace SSMWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BoxesDataTable();
+                return new V_BarcodesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
-                this.columnProductId = base.Columns["ProductId"];
+                this.columnSKU = base.Columns["SKU"];
+                this.columnBoxUnitOfTotal = base.Columns["BoxUnitOfTotal"];
+                this.columnBoxTotalOfTotal = base.Columns["BoxTotalOfTotal"];
+                this.columnBarcodeId = base.Columns["BarcodeId"];
+                this.columnBarcodeImage = base.Columns["BarcodeImage"];
                 this.columnPartCapOfBox = base.Columns["PartCapOfBox"];
                 this.columnPartQtyUnitID = base.Columns["PartQtyUnitID"];
                 this.columnPartQtyLeft = base.Columns["PartQtyLeft"];
-                this.columnBoxUnitOfTotal = base.Columns["BoxUnitOfTotal"];
-                this.columnBoxTotalOfTotal = base.Columns["BoxTotalOfTotal"];
-                this.columnPONumber = base.Columns["PONumber"];
-                this.columnLocationID = base.Columns["LocationID"];
-                this.columnDeliveryListId = base.Columns["DeliveryListId"];
-                this.columnBarcodeType = base.Columns["BarcodeType"];
-                this.columnBarcodeId = base.Columns["BarcodeId"];
-                this.columnBarcodeImage = base.Columns["BarcodeImage"];
+                this.columnContainerName = base.Columns["ContainerName"];
+                this.columnDate = base.Columns["Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
-                this.columnProductId = new global::System.Data.DataColumn("ProductId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProductId);
-                this.columnPartCapOfBox = new global::System.Data.DataColumn("PartCapOfBox", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPartCapOfBox);
-                this.columnPartQtyUnitID = new global::System.Data.DataColumn("PartQtyUnitID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPartQtyUnitID);
-                this.columnPartQtyLeft = new global::System.Data.DataColumn("PartQtyLeft", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPartQtyLeft);
-                this.columnBoxUnitOfTotal = new global::System.Data.DataColumn("BoxUnitOfTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSKU = new global::System.Data.DataColumn("SKU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSKU);
+                this.columnBoxUnitOfTotal = new global::System.Data.DataColumn("BoxUnitOfTotal", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBoxUnitOfTotal);
-                this.columnBoxTotalOfTotal = new global::System.Data.DataColumn("BoxTotalOfTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBoxTotalOfTotal = new global::System.Data.DataColumn("BoxTotalOfTotal", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBoxTotalOfTotal);
-                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPONumber);
-                this.columnLocationID = new global::System.Data.DataColumn("LocationID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLocationID);
-                this.columnDeliveryListId = new global::System.Data.DataColumn("DeliveryListId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeliveryListId);
-                this.columnBarcodeType = new global::System.Data.DataColumn("BarcodeType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBarcodeType);
                 this.columnBarcodeId = new global::System.Data.DataColumn("BarcodeId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBarcodeId);
                 this.columnBarcodeImage = new global::System.Data.DataColumn("BarcodeImage", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBarcodeImage);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
-                this.columnId.AllowDBNull = false;
-                this.columnId.ReadOnly = true;
-                this.columnId.Unique = true;
-                this.columnProductId.AllowDBNull = false;
-                this.columnPartCapOfBox.MaxLength = 2147483647;
-                this.columnPartQtyUnitID.MaxLength = 2147483647;
-                this.columnPartQtyLeft.MaxLength = 2147483647;
-                this.columnBoxUnitOfTotal.MaxLength = 2147483647;
-                this.columnBoxTotalOfTotal.MaxLength = 2147483647;
-                this.columnPONumber.MaxLength = 2147483647;
-                this.columnLocationID.AllowDBNull = false;
-                this.columnDeliveryListId.AllowDBNull = false;
-                this.columnBarcodeType.MaxLength = 2147483647;
+                this.columnPartCapOfBox = new global::System.Data.DataColumn("PartCapOfBox", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartCapOfBox);
+                this.columnPartQtyUnitID = new global::System.Data.DataColumn("PartQtyUnitID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartQtyUnitID);
+                this.columnPartQtyLeft = new global::System.Data.DataColumn("PartQtyLeft", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartQtyLeft);
+                this.columnContainerName = new global::System.Data.DataColumn("ContainerName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContainerName);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnSKU.MaxLength = 2147483647;
                 this.columnBarcodeId.MaxLength = 2147483647;
+                this.columnContainerName.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRow NewBoxesRow() {
-                return ((BoxesRow)(this.NewRow()));
+            public V_BarcodesRow NewV_BarcodesRow() {
+                return ((V_BarcodesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BoxesRow(builder);
+                return new V_BarcodesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BoxesRow);
+                return typeof(V_BarcodesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BoxesRowChanged != null)) {
-                    this.BoxesRowChanged(this, new BoxesRowChangeEvent(((BoxesRow)(e.Row)), e.Action));
+                if ((this.V_BarcodesRowChanged != null)) {
+                    this.V_BarcodesRowChanged(this, new V_BarcodesRowChangeEvent(((V_BarcodesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -620,8 +555,8 @@ namespace SSMWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BoxesRowChanging != null)) {
-                    this.BoxesRowChanging(this, new BoxesRowChangeEvent(((BoxesRow)(e.Row)), e.Action));
+                if ((this.V_BarcodesRowChanging != null)) {
+                    this.V_BarcodesRowChanging(this, new V_BarcodesRowChangeEvent(((V_BarcodesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -629,8 +564,8 @@ namespace SSMWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BoxesRowDeleted != null)) {
-                    this.BoxesRowDeleted(this, new BoxesRowChangeEvent(((BoxesRow)(e.Row)), e.Action));
+                if ((this.V_BarcodesRowDeleted != null)) {
+                    this.V_BarcodesRowDeleted(this, new V_BarcodesRowChangeEvent(((V_BarcodesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -638,14 +573,14 @@ namespace SSMWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BoxesRowDeleting != null)) {
-                    this.BoxesRowDeleting(this, new BoxesRowChangeEvent(((BoxesRow)(e.Row)), e.Action));
+                if ((this.V_BarcodesRowDeleting != null)) {
+                    this.V_BarcodesRowDeleting(this, new V_BarcodesRowChangeEvent(((V_BarcodesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveBoxesRow(BoxesRow row) {
+            public void RemoveV_BarcodesRow(V_BarcodesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -654,7 +589,7 @@ namespace SSMWeb {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SSMDataSetBoxBarcode ds = new SSMDataSetBoxBarcode();
+                SSMDataSet ds = new SSMDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -672,7 +607,7 @@ namespace SSMWeb {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BoxesDataTable";
+                attribute2.FixedValue = "V_BarcodesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -716,170 +651,62 @@ namespace SSMWeb {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BoxesRow : global::System.Data.DataRow {
+        public partial class V_BarcodesRow : global::System.Data.DataRow {
             
-            private BoxesDataTable tableBoxes;
+            private V_BarcodesDataTable tableV_Barcodes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BoxesRow(global::System.Data.DataRowBuilder rb) : 
+            internal V_BarcodesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBoxes = ((BoxesDataTable)(this.Table));
+                this.tableV_Barcodes = ((V_BarcodesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableBoxes.IdColumn]));
-                }
-                set {
-                    this[this.tableBoxes.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ProductId {
-                get {
-                    return ((int)(this[this.tableBoxes.ProductIdColumn]));
-                }
-                set {
-                    this[this.tableBoxes.ProductIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PartCapOfBox {
+            public string SKU {
                 get {
                     try {
-                        return ((string)(this[this.tableBoxes.PartCapOfBoxColumn]));
+                        return ((string)(this[this.tableV_Barcodes.SKUColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PartCapOfBox\' in table \'Boxes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKU\' in table \'V_Barcodes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoxes.PartCapOfBoxColumn] = value;
+                    this[this.tableV_Barcodes.SKUColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PartQtyUnitID {
+            public int BoxUnitOfTotal {
                 get {
                     try {
-                        return ((string)(this[this.tableBoxes.PartQtyUnitIDColumn]));
+                        return ((int)(this[this.tableV_Barcodes.BoxUnitOfTotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PartQtyUnitID\' in table \'Boxes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BoxUnitOfTotal\' in table \'V_Barcodes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoxes.PartQtyUnitIDColumn] = value;
+                    this[this.tableV_Barcodes.BoxUnitOfTotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PartQtyLeft {
+            public int BoxTotalOfTotal {
                 get {
                     try {
-                        return ((string)(this[this.tableBoxes.PartQtyLeftColumn]));
+                        return ((int)(this[this.tableV_Barcodes.BoxTotalOfTotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PartQtyLeft\' in table \'Boxes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BoxTotalOfTotal\' in table \'V_Barcodes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoxes.PartQtyLeftColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BoxUnitOfTotal {
-                get {
-                    try {
-                        return ((string)(this[this.tableBoxes.BoxUnitOfTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BoxUnitOfTotal\' in table \'Boxes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBoxes.BoxUnitOfTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BoxTotalOfTotal {
-                get {
-                    try {
-                        return ((string)(this[this.tableBoxes.BoxTotalOfTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BoxTotalOfTotal\' in table \'Boxes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBoxes.BoxTotalOfTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PONumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableBoxes.PONumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PONumber\' in table \'Boxes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBoxes.PONumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int LocationID {
-                get {
-                    return ((int)(this[this.tableBoxes.LocationIDColumn]));
-                }
-                set {
-                    this[this.tableBoxes.LocationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DeliveryListId {
-                get {
-                    return ((int)(this[this.tableBoxes.DeliveryListIdColumn]));
-                }
-                set {
-                    this[this.tableBoxes.DeliveryListIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BarcodeType {
-                get {
-                    try {
-                        return ((string)(this[this.tableBoxes.BarcodeTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BarcodeType\' in table \'Boxes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBoxes.BarcodeTypeColumn] = value;
+                    this[this.tableV_Barcodes.BoxTotalOfTotalColumn] = value;
                 }
             }
             
@@ -888,14 +715,14 @@ namespace SSMWeb {
             public string BarcodeId {
                 get {
                     try {
-                        return ((string)(this[this.tableBoxes.BarcodeIdColumn]));
+                        return ((string)(this[this.tableV_Barcodes.BarcodeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BarcodeId\' in table \'Boxes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BarcodeId\' in table \'V_Barcodes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoxes.BarcodeIdColumn] = value;
+                    this[this.tableV_Barcodes.BarcodeIdColumn] = value;
                 }
             }
             
@@ -904,123 +731,215 @@ namespace SSMWeb {
             public byte[] BarcodeImage {
                 get {
                     try {
-                        return ((byte[])(this[this.tableBoxes.BarcodeImageColumn]));
+                        return ((byte[])(this[this.tableV_Barcodes.BarcodeImageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BarcodeImage\' in table \'Boxes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BarcodeImage\' in table \'V_Barcodes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoxes.BarcodeImageColumn] = value;
+                    this[this.tableV_Barcodes.BarcodeImageColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPartCapOfBoxNull() {
-                return this.IsNull(this.tableBoxes.PartCapOfBoxColumn);
+            public int PartCapOfBox {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_Barcodes.PartCapOfBoxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartCapOfBox\' in table \'V_Barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_Barcodes.PartCapOfBoxColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPartCapOfBoxNull() {
-                this[this.tableBoxes.PartCapOfBoxColumn] = global::System.Convert.DBNull;
+            public int PartQtyUnitID {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_Barcodes.PartQtyUnitIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartQtyUnitID\' in table \'V_Barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_Barcodes.PartQtyUnitIDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPartQtyUnitIDNull() {
-                return this.IsNull(this.tableBoxes.PartQtyUnitIDColumn);
+            public int PartQtyLeft {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_Barcodes.PartQtyLeftColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartQtyLeft\' in table \'V_Barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_Barcodes.PartQtyLeftColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPartQtyUnitIDNull() {
-                this[this.tableBoxes.PartQtyUnitIDColumn] = global::System.Convert.DBNull;
+            public string ContainerName {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_Barcodes.ContainerNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ContainerName\' in table \'V_Barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_Barcodes.ContainerNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPartQtyLeftNull() {
-                return this.IsNull(this.tableBoxes.PartQtyLeftColumn);
+            public System.DateTime Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_Barcodes.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'V_Barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_Barcodes.DateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPartQtyLeftNull() {
-                this[this.tableBoxes.PartQtyLeftColumn] = global::System.Convert.DBNull;
+            public bool IsSKUNull() {
+                return this.IsNull(this.tableV_Barcodes.SKUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSKUNull() {
+                this[this.tableV_Barcodes.SKUColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBoxUnitOfTotalNull() {
-                return this.IsNull(this.tableBoxes.BoxUnitOfTotalColumn);
+                return this.IsNull(this.tableV_Barcodes.BoxUnitOfTotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBoxUnitOfTotalNull() {
-                this[this.tableBoxes.BoxUnitOfTotalColumn] = global::System.Convert.DBNull;
+                this[this.tableV_Barcodes.BoxUnitOfTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBoxTotalOfTotalNull() {
-                return this.IsNull(this.tableBoxes.BoxTotalOfTotalColumn);
+                return this.IsNull(this.tableV_Barcodes.BoxTotalOfTotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBoxTotalOfTotalNull() {
-                this[this.tableBoxes.BoxTotalOfTotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPONumberNull() {
-                return this.IsNull(this.tableBoxes.PONumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPONumberNull() {
-                this[this.tableBoxes.PONumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBarcodeTypeNull() {
-                return this.IsNull(this.tableBoxes.BarcodeTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBarcodeTypeNull() {
-                this[this.tableBoxes.BarcodeTypeColumn] = global::System.Convert.DBNull;
+                this[this.tableV_Barcodes.BoxTotalOfTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBarcodeIdNull() {
-                return this.IsNull(this.tableBoxes.BarcodeIdColumn);
+                return this.IsNull(this.tableV_Barcodes.BarcodeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBarcodeIdNull() {
-                this[this.tableBoxes.BarcodeIdColumn] = global::System.Convert.DBNull;
+                this[this.tableV_Barcodes.BarcodeIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBarcodeImageNull() {
-                return this.IsNull(this.tableBoxes.BarcodeImageColumn);
+                return this.IsNull(this.tableV_Barcodes.BarcodeImageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBarcodeImageNull() {
-                this[this.tableBoxes.BarcodeImageColumn] = global::System.Convert.DBNull;
+                this[this.tableV_Barcodes.BarcodeImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartCapOfBoxNull() {
+                return this.IsNull(this.tableV_Barcodes.PartCapOfBoxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartCapOfBoxNull() {
+                this[this.tableV_Barcodes.PartCapOfBoxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartQtyUnitIDNull() {
+                return this.IsNull(this.tableV_Barcodes.PartQtyUnitIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartQtyUnitIDNull() {
+                this[this.tableV_Barcodes.PartQtyUnitIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartQtyLeftNull() {
+                return this.IsNull(this.tableV_Barcodes.PartQtyLeftColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartQtyLeftNull() {
+                this[this.tableV_Barcodes.PartQtyLeftColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContainerNameNull() {
+                return this.IsNull(this.tableV_Barcodes.ContainerNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContainerNameNull() {
+                this[this.tableV_Barcodes.ContainerNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableV_Barcodes.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableV_Barcodes.DateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1028,22 +947,22 @@ namespace SSMWeb {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class BoxesRowChangeEvent : global::System.EventArgs {
+        public class V_BarcodesRowChangeEvent : global::System.EventArgs {
             
-            private BoxesRow eventRow;
+            private V_BarcodesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRowChangeEvent(BoxesRow row, global::System.Data.DataRowAction action) {
+            public V_BarcodesRowChangeEvent(V_BarcodesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoxesRow Row {
+            public V_BarcodesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1059,7 +978,7 @@ namespace SSMWeb {
         }
     }
 }
-namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
+namespace SSMWeb.SSMDataSetTableAdapters {
     
     
     /// <summary>
@@ -1071,7 +990,7 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BoxesTableAdapter : global::System.ComponentModel.Component {
+    public partial class V_BarcodesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1085,7 +1004,7 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BoxesTableAdapter() {
+        public V_BarcodesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1182,66 +1101,25 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Boxes";
-            tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("ProductId", "ProductId");
+            tableMapping.DataSetTable = "V_Barcodes";
+            tableMapping.ColumnMappings.Add("SKU", "SKU");
+            tableMapping.ColumnMappings.Add("BoxUnitOfTotal", "BoxUnitOfTotal");
+            tableMapping.ColumnMappings.Add("BoxTotalOfTotal", "BoxTotalOfTotal");
+            tableMapping.ColumnMappings.Add("BarcodeId", "BarcodeId");
+            tableMapping.ColumnMappings.Add("BarcodeImage", "BarcodeImage");
             tableMapping.ColumnMappings.Add("PartCapOfBox", "PartCapOfBox");
             tableMapping.ColumnMappings.Add("PartQtyUnitID", "PartQtyUnitID");
             tableMapping.ColumnMappings.Add("PartQtyLeft", "PartQtyLeft");
-            tableMapping.ColumnMappings.Add("BoxUnitOfTotal", "BoxUnitOfTotal");
-            tableMapping.ColumnMappings.Add("BoxTotalOfTotal", "BoxTotalOfTotal");
-            tableMapping.ColumnMappings.Add("PONumber", "PONumber");
-            tableMapping.ColumnMappings.Add("LocationID", "LocationID");
-            tableMapping.ColumnMappings.Add("DeliveryListId", "DeliveryListId");
-            tableMapping.ColumnMappings.Add("BarcodeType", "BarcodeType");
-            tableMapping.ColumnMappings.Add("BarcodeId", "BarcodeId");
-            tableMapping.ColumnMappings.Add("BarcodeImage", "BarcodeImage");
+            tableMapping.ColumnMappings.Add("ContainerName", "ContainerName");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Boxes] WHERE (([Id] = @Original_Id))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Boxes] ([ProductId], [PartCapOfBox], [PartQtyUnitID], [PartQtyLeft], [BoxUnitOfTotal], [BoxTotalOfTotal], [PONumber], [LocationID], [DeliveryListId], [BarcodeType], [BarcodeId], [BarcodeImage]) VALUES (@ProductId, @PartCapOfBox, @PartQtyUnitID, @PartQtyLeft, @BoxUnitOfTotal, @BoxTotalOfTotal, @PONumber, @LocationID, @DeliveryListId, @BarcodeType, @BarcodeId, @BarcodeImage)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartCapOfBox", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartCapOfBox", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartQtyUnitID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartQtyUnitID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartQtyLeft", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartQtyLeft", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BoxUnitOfTotal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BoxUnitOfTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BoxTotalOfTotal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BoxTotalOfTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocationID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocationID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeliveryListId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeliveryListId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Boxes] SET [ProductId] = @ProductId, [PartCapOfBox] = @PartCapOfBox, [PartQtyUnitID] = @PartQtyUnitID, [PartQtyLeft] = @PartQtyLeft, [BoxUnitOfTotal] = @BoxUnitOfTotal, [BoxTotalOfTotal] = @BoxTotalOfTotal, [PONumber] = @PONumber, [LocationID] = @LocationID, [DeliveryListId] = @DeliveryListId, [BarcodeType] = @BarcodeType, [BarcodeId] = @BarcodeId, [BarcodeImage] = @BarcodeImage WHERE (([Id] = @Original_Id))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProductId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartCapOfBox", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartCapOfBox", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartQtyUnitID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartQtyUnitID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartQtyLeft", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartQtyLeft", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BoxUnitOfTotal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BoxUnitOfTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BoxTotalOfTotal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BoxTotalOfTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocationID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocationID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeliveryListId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeliveryListId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarcodeImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BarcodeImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SSMOrdinaryModel"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SSMConnectionStringForReport"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1250,9 +1128,8 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, ProductId, PartCapOfBox, PartQtyUnitID, PartQtyLeft, BoxUnitOfTotal, B" +
-                "oxTotalOfTotal, PONumber, LocationID, DeliveryListId, BarcodeType, BarcodeId, Ba" +
-                "rcodeImage FROM dbo.Boxes";
+            this._commandCollection[0].CommandText = "SELECT SKU, BoxUnitOfTotal, BoxTotalOfTotal, BarcodeId, BarcodeImage, PartCapOfBo" +
+                "x, PartQtyUnitID, PartQtyLeft, ContainerName, Date FROM dbo.V_Barcodes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1260,7 +1137,7 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SSMDataSetBoxBarcode.BoxesDataTable dataTable) {
+        public virtual int Fill(SSMDataSet.V_BarcodesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1273,219 +1150,11 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SSMDataSetBoxBarcode.BoxesDataTable GetData() {
+        public virtual SSMDataSet.V_BarcodesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SSMDataSetBoxBarcode.BoxesDataTable dataTable = new SSMDataSetBoxBarcode.BoxesDataTable();
+            SSMDataSet.V_BarcodesDataTable dataTable = new SSMDataSet.V_BarcodesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SSMDataSetBoxBarcode.BoxesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SSMDataSetBoxBarcode dataSet) {
-            return this.Adapter.Update(dataSet, "Boxes");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ProductId, string PartCapOfBox, string PartQtyUnitID, string PartQtyLeft, string BoxUnitOfTotal, string BoxTotalOfTotal, string PONumber, int LocationID, int DeliveryListId, string BarcodeType, string BarcodeId, byte[] BarcodeImage) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProductId));
-            if ((PartCapOfBox == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PartCapOfBox));
-            }
-            if ((PartQtyUnitID == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PartQtyUnitID));
-            }
-            if ((PartQtyLeft == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PartQtyLeft));
-            }
-            if ((BoxUnitOfTotal == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(BoxUnitOfTotal));
-            }
-            if ((BoxTotalOfTotal == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(BoxTotalOfTotal));
-            }
-            if ((PONumber == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PONumber));
-            }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(LocationID));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(DeliveryListId));
-            if ((BarcodeType == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(BarcodeType));
-            }
-            if ((BarcodeId == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(BarcodeId));
-            }
-            if ((BarcodeImage == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((byte[])(BarcodeImage));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ProductId, string PartCapOfBox, string PartQtyUnitID, string PartQtyLeft, string BoxUnitOfTotal, string BoxTotalOfTotal, string PONumber, int LocationID, int DeliveryListId, string BarcodeType, string BarcodeId, byte[] BarcodeImage, int Original_Id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ProductId));
-            if ((PartCapOfBox == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PartCapOfBox));
-            }
-            if ((PartQtyUnitID == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PartQtyUnitID));
-            }
-            if ((PartQtyLeft == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PartQtyLeft));
-            }
-            if ((BoxUnitOfTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(BoxUnitOfTotal));
-            }
-            if ((BoxTotalOfTotal == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(BoxTotalOfTotal));
-            }
-            if ((PONumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PONumber));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(LocationID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(DeliveryListId));
-            if ((BarcodeType == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(BarcodeType));
-            }
-            if ((BarcodeId == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(BarcodeId));
-            }
-            if ((BarcodeImage == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((byte[])(BarcodeImage));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -1501,8 +1170,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private BoxesTableAdapter _boxesTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1515,20 +1182,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public BoxesTableAdapter BoxesTableAdapter {
-            get {
-                return this._boxesTableAdapter;
-            }
-            set {
-                this._boxesTableAdapter = value;
             }
         }
         
@@ -1551,10 +1204,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._boxesTableAdapter != null) 
-                            && (this._boxesTableAdapter.Connection != null))) {
-                    return this._boxesTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1568,9 +1217,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._boxesTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1580,17 +1226,8 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(SSMDataSetBoxBarcode dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SSMDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._boxesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Boxes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._boxesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1599,16 +1236,8 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(SSMDataSetBoxBarcode dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SSMDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._boxesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Boxes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._boxesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1617,16 +1246,8 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(SSMDataSetBoxBarcode dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SSMDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._boxesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Boxes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._boxesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1659,17 +1280,12 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(SSMDataSetBoxBarcode dataSet) {
+        public virtual int UpdateAll(SSMDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._boxesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._boxesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1703,15 +1319,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._boxesTableAdapter != null)) {
-                    revertConnections.Add(this._boxesTableAdapter, this._boxesTableAdapter.Connection);
-                    this._boxesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._boxesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._boxesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._boxesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._boxesTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1769,10 +1376,6 @@ namespace SSMWeb.SSMDataSetBoxBarcodeTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._boxesTableAdapter != null)) {
-                    this._boxesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._boxesTableAdapter]));
-                    this._boxesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

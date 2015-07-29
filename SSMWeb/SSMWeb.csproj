@@ -222,10 +222,10 @@
     <Compile Include="Models\Utils\IdentityModels.cs" />
     <Compile Include="Models\Utils\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SSMDataSetBoxBarcode.Designer.cs">
+    <Compile Include="SSMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+      <DependentUpon>SSMDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -466,18 +466,18 @@
     <Content Include="Views\OrderLists\Details.cshtml" />
     <Content Include="Views\OrderLists\Edit.cshtml" />
     <Content Include="Views\OrderLists\Index.cshtml" />
-    <Content Include="SSMDataSetBoxBarcode.xsc">
-      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+    <Content Include="Views\Boxes\Index.cshtml" />
+    <Content Include="SSMDataSet.xsc">
+      <DependentUpon>SSMDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="SSMDataSetBoxBarcode.xsd">
+    <None Include="SSMDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SSMDataSetBoxBarcode.Designer.cs</LastGenOutput>
+      <LastGenOutput>SSMDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="SSMDataSetBoxBarcode.xss">
-      <DependentUpon>SSMDataSetBoxBarcode.xsd</DependentUpon>
+    <Content Include="SSMDataSet.xss">
+      <DependentUpon>SSMDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Views\Boxes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -492,7 +492,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <EmbeddedResource Include="Report\BarcodeReport.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
