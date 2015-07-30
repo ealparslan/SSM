@@ -18,6 +18,7 @@ namespace SSMWeb.Models
         public string Aliases { get; set; }
 
         [DisplayName("Is Enabled")]
+        [DefaultValue(true)]
         public bool IsEnabled { get; set; }
 
         public virtual HashSet<Product> Products { get; set; }

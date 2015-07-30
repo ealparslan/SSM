@@ -38,7 +38,9 @@ namespace SSMWeb.Models
         // GET: ProductSizes/Create
         public ActionResult Create()
         {
-            return View();
+            var productSize = new ProductSize();
+            productSize.IsEnabled = true;
+            return View(productSize);
         }
 
         // POST: ProductSizes/Create

@@ -40,7 +40,9 @@ namespace SSMWeb.Models
         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
-            return View();
+            var fulfilmentSku = new FulfilmentSKU();
+            fulfilmentSku.IsDiscontinued = false;
+            return View(fulfilmentSku);
         }
 
         // POST: FulfilmentSKUs/Create

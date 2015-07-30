@@ -38,7 +38,9 @@ namespace SSMWeb.Models
         // GET: ProductColors/Create
         public ActionResult Create()
         {
-            return View();
+            var productColor = new ProductColor();
+            productColor.IsEnabled = true;
+            return View(productColor);
         }
 
         // POST: ProductColors/Create

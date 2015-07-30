@@ -67,7 +67,7 @@ namespace SSMWeb.Models
             {
                 db.DeliveryLists.Add(deliveryList);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Deliveries");
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "Date", deliveryList.DeliveryId);
@@ -133,7 +133,7 @@ namespace SSMWeb.Models
             DeliveryList deliveryList = db.DeliveryLists.Find(id);
             db.DeliveryLists.Remove(deliveryList);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Deliveries");
         }
 
         // GET: DeliveryLists/Box/5
@@ -142,7 +142,7 @@ namespace SSMWeb.Models
             DeliveryList deliveryList = db.DeliveryLists.Find(id);
             BoxesController boxer = new BoxesController();
             boxer.Create(deliveryList.ProductId, 0, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID,deliveryList.PartCapOfBox);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Deliveries");
         }
 
         protected override void Dispose(bool disposing)

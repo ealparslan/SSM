@@ -82,7 +82,7 @@ namespace SSMWeb.Models
             {
                 db.ShipmentLists.Add(shipmentList);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Shipments");
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
@@ -148,7 +148,7 @@ namespace SSMWeb.Models
             ShipmentList shipmentList = db.ShipmentLists.Find(id);
             db.ShipmentLists.Remove(shipmentList);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Shipments");
         }
 
         protected override void Dispose(bool disposing)

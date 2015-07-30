@@ -27,7 +27,7 @@ namespace SSMWeb.Models
         [DisplayName("Order Amount")]
         [DataType(DataType.Currency)]
         [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:c}")]
-        public string OrderAmount { get; set; }
+        public double OrderAmount { get; set; }
 
         public virtual HashSet<OrderList> OrderLists { get; set; }
 

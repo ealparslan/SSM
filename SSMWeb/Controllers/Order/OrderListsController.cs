@@ -14,10 +14,17 @@ namespace SSMWeb.Models
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: OrderLists
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var orderLists = db.OrderLists.Include(s => s.Order);
-            return View(db.OrderLists.ToList());
+            List<OrderList> selectedItems = new List<OrderList>();
+
+            foreach (OrderList item in orderLists)
+            {
+                if (item.OrderId == id)
+                    selectedItems.Add(item);
+            }
+            return View(selectedItems);
         }
 
         // GET: OrderLists/Details/5
@@ -47,13 +54,13 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderId,SoldDate,SalesChannel,BoxId,SoldQty")] OrderList orderList)
+        public ActionResult Create([Bind(Include = "Id,OrderId,BoxId,SoldQty")] OrderList orderList)
         {
             if (ModelState.IsValid)
             {
                 db.OrderLists.Add(orderList);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Orders");
             }
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.Order);
             return View(orderList);
@@ -81,13 +88,13 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,BoxId,SoldQty")] OrderList orderList)
+        public ActionResult Edit([Bind(Include = "Id,OrderName,BoxId,SoldQty")] OrderList orderList)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(orderList).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Orders");
             }
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.Order);
 
@@ -117,7 +124,7 @@ namespace SSMWeb.Models
             OrderList orderList = db.OrderLists.Find(id);
             db.OrderLists.Remove(orderList);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Orders");
         }
 
         protected override void Dispose(bool disposing)

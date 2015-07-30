@@ -45,7 +45,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,OrderListId,OrderAmount")] Order order)
+        public ActionResult Create([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,OrderAmount")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,OrderListId,OrderAmount")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,OrderName,SoldDate,SalesChannel,OrderAmount")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -132,7 +132,7 @@ namespace SSMWeb.Models
         // GET: Orders/ListItems/2
         public ActionResult ListItems(int? id)
         {
-            return RedirectToAction("Index", "OrdertLists");
+            return RedirectToAction("Index", "OrderLists", new { id = id });
         }
     }
 }

@@ -38,7 +38,9 @@ namespace SSMWeb.Models
         // GET: ProductCategories/Create
         public ActionResult Create()
         {
-            return View();
+            var productCategory = new ProductCategory();
+            productCategory.IsEnabled = true;
+            return View(productCategory);
         }
 
         // POST: ProductCategories/Create
