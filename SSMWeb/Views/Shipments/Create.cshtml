@@ -35,7 +35,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.LoadedDate, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.LoadedDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.LoadedDate, new { htmlAttributes = new { @class = "form-control datefield", @id = "DateBox1" } })
                     @Html.ValidationMessageFor(model => model.LoadedDate, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -88,13 +88,13 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.PickupReferanceID, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PickupReferanceID, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.PickupReferanceID, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.VesselName, htmlAttributes: new { @class = "control-label col-md-2" })

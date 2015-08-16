@@ -61,6 +61,14 @@ a {
      height: 40px;
      text-indent: -9999px; /* hides the link text */
 }
+.print
+{
+    background: url(../Images/boxed.gif) no-repeat top left;
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     text-indent: -9999px; /* hides the link text */
+}
 .listItems
 {
     background: url(../Images/listItems.png) no-repeat top left;

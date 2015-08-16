@@ -76,13 +76,22 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProductId,BoxCapacity,BoxQuantity,ShipmentId")] ShipmentList shipmentList)
+        public ActionResult Create([Bind(Include = "Id,ProductId,BoxCapacity,BoxQuantity,ShipmentId")] ShipmentList shipmentList, string Create)
         {
             if (ModelState.IsValid)
             {
                 db.ShipmentLists.Add(shipmentList);
                 db.SaveChanges();
-                return RedirectToAction("Index","Shipments");
+                switch (Create)
+                {
+                    case "Add":
+                        return RedirectToAction("Index", "Shipments");
+                        break;
+                    case "Add More":
+                        return RedirectToAction("Create", "ShipmentLists", new { id = shipmentList.ShipmentId });
+                        break;
+                };
+                    
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);

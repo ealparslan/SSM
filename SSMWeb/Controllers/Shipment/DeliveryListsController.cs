@@ -61,13 +61,21 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProductId,BoxQuantity,PartCapOfBox,DeliveryId")] DeliveryList deliveryList)
+        public ActionResult Create([Bind(Include = "Id,ProductId,BoxQuantity,PartCapOfBox,DeliveryId")] DeliveryList deliveryList, string Create)
         {
             if (ModelState.IsValid)
             {
                 db.DeliveryLists.Add(deliveryList);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Deliveries");
+                switch (Create)
+                {
+                    case "Add":
+                        return RedirectToAction("Index", "Deliveries");
+                        break;
+                    case "Add More":
+                        return RedirectToAction("Create", "DeliveryLists", new { id = deliveryList.DeliveryId });
+                        break;
+                };
             }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "Date", deliveryList.DeliveryId);
@@ -142,7 +150,22 @@ namespace SSMWeb.Models
             DeliveryList deliveryList = db.DeliveryLists.Find(id);
             BoxesController boxer = new BoxesController();
             boxer.Create(deliveryList.ProductId, 0, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID,deliveryList.PartCapOfBox);
-            return RedirectToAction("Index", "Deliveries");
+
+            if (ModelState.IsValid)
+            {
+                deliveryList.BarcodesPrinted = true;
+                db.Entry(deliveryList).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index","DeliveryLists", new { id = deliveryList.DeliveryId });
+        }
+
+
+        // GET: DeliveryLists/PrintBarcodes/5
+        public ActionResult PrintBarcodes(int? id)
+        {
+            return Redirect("../../PrintBarcodes.aspx?entity=DeliveryLists&id=" + id);
         }
 
         protected override void Dispose(bool disposing)

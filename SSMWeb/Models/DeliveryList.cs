@@ -23,6 +23,9 @@ namespace SSMWeb.Models
         [DisplayName("Delivery Id")]
         public int DeliveryId { get; set; }
 
+        [DisplayName("Barcodes Printed")]
+        public bool BarcodesPrinted { get; set; }
+
         public virtual Delivery Delivery { get; set; }
 
         public virtual Product Product { get; set; }

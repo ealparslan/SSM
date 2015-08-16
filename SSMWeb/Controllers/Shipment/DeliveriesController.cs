@@ -129,6 +129,41 @@ namespace SSMWeb.Models
             return RedirectToAction("Index", "DeliveryLists", new { id = id });
         }
 
+        // GET: Deliveries/Box/5
+        public ActionResult Box(int? id)
+        {
+            Delivery delivery = db.Deliveries.Find(id);
+
+            foreach (DeliveryList deliveryList in delivery.DeliveryLists)
+            {
+                BoxesController boxer = new BoxesController();
+                boxer.Create(deliveryList.ProductId, 0, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID, deliveryList.PartCapOfBox);
+                if (ModelState.IsValid)
+                {
+                    deliveryList.BarcodesPrinted = true;
+                    db.Entry(deliveryList).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                delivery.BarcodesPrinted = true;
+                db.Entry(delivery).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+        // GET: Deliveries/PrintBarcodes/5
+        public ActionResult PrintBarcodes(int? id)
+        {
+            return Redirect("../../PrintBarcodes.aspx?entity=Deliveries&id=" + id);
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

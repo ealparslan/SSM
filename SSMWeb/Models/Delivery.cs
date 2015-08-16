@@ -18,6 +18,9 @@ namespace SSMWeb.Models
         [DisplayName("Shipment Id")]
         public int ShipmentId { get; set; }
 
+        [DisplayName("Barcodes Printed")]
+        public bool BarcodesPrinted { get; set; }
+
         public virtual HashSet<DeliveryList> DeliveryLists { get; set; }
 
         public virtual Shipment Shipment { get; set; }
