@@ -19,8 +19,8 @@ namespace SSMWeb.Models
         SizeF _codeStringSize = SizeF.Empty;
         public BarCode39()
         {
-            _titleFont = new Font("Arial", 20);
-            _codeStringFont = new Font("Arial", 20);
+            _titleFont = new Font("Arial", 40);
+            _codeStringFont = new Font("Arial", 40);
         }
         #region Barcode Title
         private string _titleString = null;
@@ -52,7 +52,7 @@ namespace SSMWeb.Models
         #endregion
         #region Barcode Font
         private Font _c39Font = null;
-        private float _c39FontSize = 12;
+        private float _c39FontSize = 24;
         private string _c39FontFileName = null;
         private string _c39FontFamilyName = null;
         public string FontFileName

@@ -13,9 +13,6 @@
     <div style="height: 465px; width: 923px">
     
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <p>
-            <asp:Button ID="Button1" value="Print all pages to PDF" runat="server" OnClick="Button1_Click" Text="Print all pages to PDF" />
-        </p>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="916px" SizeToReportContent="False">
             <LocalReport ReportPath="Report\BarcodeReport.rdlc">
                 <DataSources>

@@ -24,7 +24,7 @@ namespace SSMWeb
         {
             String entity = Request.QueryString["entity"];
             String id = Request.QueryString["id"];
-            String command = "SELECT p.SKU, b.BoxUnitOfTotal, b.BoxTotalOfTotal, b.BarcodeId, b.BarcodeImage, b.PartCapOfBox, b.PartQtyUnitID, b.PartQtyLeft, s.ContainerName, d.Date FROM Boxes AS b"
+            String command = "SELECT p.SKU, b.DeliveryListId, b.BoxUnitOfTotal, b.BoxTotalOfTotal, b.BarcodeId, b.BarcodeImage, b.PartCapOfBox, b.PartQtyUnitID, b.PartQtyLeft, s.ContainerName, d.Date FROM Boxes AS b"
                 + " INNER JOIN DeliveryLists AS dl ON b.DeliveryListId = dl.Id INNER JOIN Deliveries AS d ON dl.DeliveryId = d.Id INNER JOIN Shipments AS s ON d.ShipmentId = s.Id INNER JOIN Products AS p ON b.ProductId = p.Id";
 
             if (entity.Equals("Deliveries"))

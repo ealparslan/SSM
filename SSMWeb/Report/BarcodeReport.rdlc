@@ -260,7 +260,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!ContainerName.Value</Value>
+                  <Value>=Fields!DeliveryListId.Value</Value>
                 </SortExpression>
                 <SortExpression>
                   <Value>=Fields!BoxUnitOfTotal.Value</Value>
@@ -341,6 +341,10 @@
           <DataField>SKU</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DeliveryListId">
+          <DataField>DeliveryListId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="BoxUnitOfTotal">
           <DataField>BoxUnitOfTotal</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -380,7 +384,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SSMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\SSMDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Public\SSMSolution\SSMWeb\SSMDataSet.xsd</rd:SchemaPath>
         <rd:TableName>V_Barcodes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
