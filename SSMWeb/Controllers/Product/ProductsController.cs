@@ -38,7 +38,7 @@ namespace SSMWeb.Models
             return View(product);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         // GET: Products/Create
         public ActionResult Create()
         {
@@ -54,7 +54,7 @@ namespace SSMWeb.Models
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
@@ -75,7 +75,7 @@ namespace SSMWeb.Models
         }
 
         // GET: Products/Edit/5
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -98,7 +98,7 @@ namespace SSMWeb.Models
         // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
@@ -118,7 +118,7 @@ namespace SSMWeb.Models
         }
 
         // GET: Products/Delete/5
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace SSMWeb.Models
         }
 
         // POST: Products/Delete/5
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PrintBarcodes.aspx.cs" Inherits="SSMWeb.PrintBarcodes" %>
 
-<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
 <!DOCTYPE html>
 
@@ -13,10 +13,8 @@
     <div style="height: 465px; width: 923px">
     
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <p>
-            <asp:Button ID="Button1" value="Print all pages to PDF" runat="server" OnClick="Button1_Click" Text="Print all pages to PDF" />
-        </p>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="916px" SizeToReportContent="False">
+
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="916px" SizeToReportContent="True">
             <LocalReport ReportPath="Report\BarcodeReport.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="BarcodesDS" />
@@ -27,8 +25,6 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SSMConnectionStringForReport %>" ></asp:SqlDataSource>
 
     </div>
-
     </form>
-
 </body>
 </html>

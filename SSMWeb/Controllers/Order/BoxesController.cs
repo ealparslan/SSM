@@ -95,7 +95,7 @@ namespace SSMWeb.Models
             try
             {
                 BarCode39 _barcode = new BarCode39();
-                int barSize = 64;
+                int barSize = 128;
                 string fontFile = System.Web.HttpContext.Current.Server.MapPath("~/fonts/FREE3OF9.TTF");
                 return (_barcode.Code39(barcode, barSize, true, title, fontFile));
             }

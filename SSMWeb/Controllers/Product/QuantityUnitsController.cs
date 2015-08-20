@@ -10,6 +10,7 @@ using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
+    [Authorize(Roles = "admin")]
     public class QuantityUnitsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();

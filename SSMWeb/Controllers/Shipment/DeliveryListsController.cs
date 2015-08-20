@@ -11,6 +11,7 @@ using System.Collections;
 
 namespace SSMWeb.Models
 {
+    [Authorize(Roles = "stocker, admin")]
     public class DeliveryListsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();

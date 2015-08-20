@@ -10,6 +10,7 @@ using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
+    [Authorize(Roles = "shipper, stocker, admin")]
     public class ShipmentListsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();

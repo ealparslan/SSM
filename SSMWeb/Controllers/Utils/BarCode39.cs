@@ -19,8 +19,8 @@ namespace SSMWeb.Models
         SizeF _codeStringSize = SizeF.Empty;
         public BarCode39()
         {
-            _titleFont = new Font("Arial", 10);
-            _codeStringFont = new Font("Arial", 10);
+            _titleFont = new Font("Arial", 20);
+            _codeStringFont = new Font("Arial", 20);
         }
         #region Barcode Title
         private string _titleString = null;

@@ -10,7 +10,7 @@ using SSMWeb.Models;
 
 namespace SSMWeb.Models
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class FulfilmentSKUsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
