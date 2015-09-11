@@ -39,7 +39,6 @@ namespace SSMWeb
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/spacelab.css",
-                      //"~/Content/jquery-ui.css",
                       "~/Content/site.css",
                       "~/Content/select2.css",
                       "~/Content/select2-bootstrap.css"

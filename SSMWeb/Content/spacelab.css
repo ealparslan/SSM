@@ -109,6 +109,22 @@ a {
      height: 40px;
      text-indent: -9999px; /* hides the link text */
 }
+.delivered
+{
+    background: url(../Images/delivered.png) no-repeat top left;
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     text-indent: -9999px; /* hides the link text */
+}
+.undelivered
+{
+    background: url(../Images/undelivered.png) no-repeat top left;
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     text-indent: -9999px; /* hides the link text */
+}
 
 a:active,
 a:hover {

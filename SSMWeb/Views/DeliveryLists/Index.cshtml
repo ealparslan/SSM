@@ -39,7 +39,7 @@
                     @Html.ActionLink("Box", "Box", new { id = item.Id }, new { @class = "box", onclick = "return confirm('Are you sure you wish to print barcodes for only this DELIVERY ITEM?');" })
                     @if (item.BarcodesPrinted)
                     {
-                        @Html.ActionLink("PrintBarcodes", "PrintBarcodes", new { id = item.Id }, new { @class = "print" })
+                        @Html.ActionLink("PrintBarcodes", "PrintBarcodes", new { id = item.Id }, new { @class = "print", target = "_blank" })
                     }
                 </td>
                 <td>

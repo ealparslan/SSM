@@ -262,9 +262,11 @@
     <Content Include="Images\boxed.gif" />
     <Content Include="Images\box_barcode.png" />
     <Content Include="Images\delete.png" />
+    <Content Include="Images\delivered.png" />
     <Content Include="Images\details.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\listItems.png" />
+    <Content Include="Images\undelivered.png" />
     <Content Include="PrintBarcodes.aspx" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -353,6 +355,7 @@
     <Content Include="fonts\FREE3OF9.TTF" />
     <None Include="Properties\PublishProfiles\Default Settings %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\filesystem.pubxml" />
     <None Include="Properties\PublishProfiles\sd.pubxml" />
     <None Include="Properties\PublishProfiles\ssmbare - FTP.pubxml" />
     <None Include="Scripts\j_query-1.10.2.intellisense.js" />

@@ -19,7 +19,7 @@ namespace SSMWeb.Models
         // GET: Shipments
         public ActionResult Index()
         {
-            return View(db.Shipments.ToList());
+            return View(db.Shipments.OrderByDescending(s => s.CreatedDate).ToList());
         }
 
         // GET: Shipments/Details/5
@@ -147,6 +147,26 @@ namespace SSMWeb.Models
         public ActionResult ListItems(int? id)
         {
             return RedirectToAction("Index", "ShipmentLists", new { id = id });
+        }
+
+        // GET: Shipments/Delivered/2
+        public ActionResult Delivered(int? id)
+        {
+            Shipment shipment = db.Shipments.Find(id);
+            shipment.IsDelivered = true;
+            db.Entry(shipment).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        // GET: Shipments/Undelivered/2
+        public ActionResult Undelivered(int? id)
+        {
+            Shipment shipment = db.Shipments.Find(id);
+            shipment.IsDelivered = false;
+            db.Entry(shipment).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

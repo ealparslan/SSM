@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: Deliveries
         public ActionResult Index()
         {
-            var deliveries = db.Deliveries.Include(d => d.Shipment);
+            var deliveries = db.Deliveries.Include(d => d.Shipment).OrderByDescending(d => d.Date);
             return View(deliveries.ToList());
         }
 
