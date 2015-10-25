@@ -23,11 +23,17 @@ namespace SSMWeb.Models
         [DisplayName("Sales Channel")]
         public string SalesChannel { get; set; }
 
-        [Required]
-        [DisplayName("Order Amount")]
+        [DisplayName("Requested Amount")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [DataType(DataType.Currency)]
         [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:c}")]
-        public double OrderAmount { get; set; }
+        public double? RequestedAmount { get; set; }
+
+        [DisplayName("Sold Amount")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DataType(DataType.Currency)]
+        [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:c}")]
+        public double? SoldAmount { get; set; }
 
         public virtual HashSet<OrderList> OrderLists { get; set; }
 

@@ -23,7 +23,10 @@
                 @Html.DisplayNameFor(model => model.SalesChannel)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OrderAmount)
+                @Html.DisplayNameFor(model => model.RequestedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoldAmount)
             </th>
         </tr>
         </thead>
@@ -48,7 +51,10 @@
                     @Html.DisplayFor(modelItem => item.SalesChannel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.OrderAmount)
+                    @Html.DisplayFor(modelItem => item.RequestedAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoldAmount)
                 </td>
             </tr>
         }

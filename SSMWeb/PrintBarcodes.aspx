@@ -16,7 +16,7 @@
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="916px" SizeToReportContent="False">
             <LocalReport ReportPath="Report\BarcodeReport.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="BarcodesDS" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="BarcodeDataSetl" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>

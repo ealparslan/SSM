@@ -11,20 +11,21 @@ namespace SSMWeb.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [DisplayName("Product Id")]
+        public int ProductId { get; set; }
+
         [DisplayName("Order Id")]
         public int OrderId { get; set; }
 
-        [DisplayName("Box Id")]
-        public int BoxId { get; set; }
+        [DisplayName("Requested Box Quantity")]
+        public int RequestedBoxQuantity { get; set; }
 
-        [Required]
-        [DisplayName("Sold Quantity")]
-        public int SoldQty { get; set; }
-
-        //public virtual Box Box { get; set; }
+        [DisplayName("Sold Box Quantity")]
+        public int SoldBoxQuantity { get; set; }
 
         public virtual Order Order { get; set; }
+
+        public virtual Product Product { get; set; }
 
     }
 }

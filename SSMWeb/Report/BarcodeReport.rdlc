@@ -17,7 +17,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.46319in</Height>
+              <Height>2.40486in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -27,9 +27,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!SKU.Value</Value>
                               <Style>
-                                <FontSize>30pt</FontSize>
+                                <FontSize>26pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -41,10 +41,54 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!SKU.Value</Value>
+                              <Value />
                               <Style>
-                                <FontSize>30pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontSize>18pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Name.Value</Value>
+                              <Style>
+                                <FontSize>18pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>18pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cap: </Value>
+                              <Style>
+                                <FontSize>22pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!PartCapOfBox.Value</Value>
+                              <Style>
+                                <FontSize>22pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -85,7 +129,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.14028in</Height>
+              <Height>1.66528in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -96,10 +140,10 @@
                           <Value>=Fields!BarcodeImage.Value</Value>
                           <MIMEType>image/png</MIMEType>
                           <Sizing>Fit</Sizing>
-                          <Top>0.33334in</Top>
-                          <Left>0.55834in</Left>
-                          <Height>1.54236in</Height>
-                          <Width>2.4in</Width>
+                          <Top>0.18333in</Top>
+                          <Left>0.57501in</Left>
+                          <Height>1.26736in</Height>
+                          <Width>2.225in</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -123,7 +167,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.14375in</Height>
+              <Height>1.32708in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -133,9 +177,23 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>unit </Value>
+                              <Value />
                               <Style>
-                                <FontSize>20pt</FontSize>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Box </Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
@@ -143,21 +201,21 @@
                               <Label>unit</Label>
                               <Value>=Fields!BoxUnitOfTotal.Value</Value>
                               <Style>
-                                <FontSize>20pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                             <TextRun>
                               <Value> of</Value>
                               <Style>
-                                <FontSize>20pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                             <TextRun>
                               <Value xml:space="preserve"> </Value>
                               <Style>
-                                <FontSize>20pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -165,27 +223,39 @@
                               <Label>total</Label>
                               <Value>=Fields!BoxTotalOfTotal.Value</Value>
                               <Style>
-                                <FontSize>20pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Delivery Date:</Value>
                               <Style>
-                                <FontSize>20pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Date.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                         <Paragraph>
@@ -193,13 +263,13 @@
                             <TextRun>
                               <Value>=Fields!ContainerName.Value</Value>
                               <Style>
-                                <FontSize>15pt</FontSize>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -274,10 +344,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>BarcodesDS</DataSetName>
+        <DataSetName>BarcodeDataSetl</DataSetName>
         <Top>0.25in</Top>
         <Left>0.10833in</Left>
-        <Height>4.74722in</Height>
+        <Height>5.39723in</Height>
         <Width>3.50001in</Width>
         <Style>
           <Border>
@@ -303,7 +373,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.50556in</Height>
+    <Height>5.82223in</Height>
     <Style />
   </Body>
   <Width>3.75001in</Width>
@@ -322,23 +392,27 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SSMDataSet">
+    <DataSource Name="BarcodeDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>660d846b-0ee5-4e64-bf31-2a7c022da6c6</rd:DataSourceID>
+      <rd:DataSourceID>8c98dfda-11e8-4449-8148-3f5d17f0d71c</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="BarcodesDS">
+    <DataSet Name="BarcodeDataSetl">
       <Query>
-        <DataSourceName>SSMDataSet</DataSourceName>
+        <DataSourceName>BarcodeDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
         <Field Name="SKU">
           <DataField>SKU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DeliveryListId">
@@ -383,8 +457,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SSMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Public\SSMSolution\SSMWeb\SSMDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>BarcodeDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Erdem\Documents\SSMSolution\SSMWeb\BarcodeDataSet.xsd</rd:SchemaPath>
         <rd:TableName>V_Barcodes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -11,43 +11,35 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.OrderName)
+            @Html.DisplayNameFor(model => model.Order.OrderName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.OrderName)
+            @Html.DisplayFor(model => model.Order.OrderName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SoldDate)
+            @Html.DisplayNameFor(model => model.ProductId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoldDate)
+            @Html.DisplayFor(model => model.ProductId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SalesChannel)
+            @Html.DisplayNameFor(model => model.RequestedBoxQuantity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SalesChannel)
+            @Html.DisplayFor(model => model.RequestedBoxQuantity)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BoxId)
+            @Html.DisplayNameFor(model => model.SoldBoxQuantity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BoxId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SoldQty)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoldQty)
+            @Html.DisplayFor(model => model.SoldBoxQuantity)
         </dd>
 
     </dl>

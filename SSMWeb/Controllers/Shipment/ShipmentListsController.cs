@@ -58,7 +58,7 @@ namespace SSMWeb.Models
 
         public ActionResult Create(int id)
         {
-            Shipment shipment = db.Shipments.Find(id);
+            //Shipment shipment = db.Shipments.Find(id);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", id);
 

@@ -1,15 +1,32 @@
 ﻿@model IEnumerable<SSMWeb.Models.OrderList>
 
 @{
-    ViewBag.Title = "Order Items";
+    ViewBag.Title = "Ordered Items";
 }
 
-<h2>Order Items</h2>
+<h2>Ordered Items</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table id="richtable" class="display" cellspacing="0" width="100%">
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.Label("Box Id", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-5">
+                @Html.TextBox("Box Id", "Read the barcode on the box...")&nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="submit" value="Sell" class="btn btn-default" name="Sell" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<table id="richtable" class="display">
     <thead>
         <tr>
             <th></th>
@@ -17,13 +34,18 @@
                 @Html.DisplayNameFor(model => model.Order.OrderName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BoxId)
+                @Html.DisplayNameFor(model => model.Product.SKU)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SoldQty)
+                @Html.DisplayNameFor(model => model.RequestedBoxQuantity)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoldBoxQuantity)
+            </th>
+
         </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -37,10 +59,13 @@
                     @Html.DisplayFor(modelItem => item.Order.OrderName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BoxId)
+                    @Html.DisplayFor(modelItem => item.Product.SKU)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SoldQty)
+                    @Html.DisplayFor(modelItem => item.RequestedBoxQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoldBoxQuantity)
                 </td>
             </tr>
         }

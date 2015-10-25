@@ -12,9 +12,9 @@
 <table id="richtable" class="display">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.DeliveryList.PartCapOfBox)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Location.Name)
             </th>
@@ -53,9 +53,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.DeliveryList.PartCapOfBox)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Location.Name)
                 </td>
