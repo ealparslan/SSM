@@ -16,9 +16,15 @@ namespace SSMWeb.Controllers.Order
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
         // GET: OrderLists
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int id)
         {
-            var orderLists = db.OrderLists.Include(o => o.Order);
+            if(TempData["ErrorMessage"] != null)
+                @ViewBag.ErrorMessage = TempData["ErrorMessage"].ToString();
+            if (TempData["BoxId"] != null)
+                @ViewBag.BoxId = TempData["BoxId"].ToString();
+            var orderLists = db.OrderLists.Include(o => o.Order).Where(o => o.OrderId == id);
+            TempData["OrderId"] = id;
+            @ViewBag.OrderId = id;
             return View(await orderLists.ToListAsync());
         }
 
@@ -151,20 +157,47 @@ namespace SSMWeb.Controllers.Order
             base.Dispose(disposing);
         }
 
-        // GET: Orderlists/Sell/2
-        public ActionResult Sell(int? id)
+        //[HandleError()]
+        public ActionResult Sell(string boxid, int orderid)
         {
-            Box box = db.Boxes.Find(id);
-            box.PartQtyLeft = 0;
-            OrderList orderList = db.OrderLists.Where(s => s.ProductId == box.ProductId).FirstOrDefault(); // each orderlist must have different SKU!!!
-            if(orderList.RequestedBoxQuantity > orderList.SoldBoxQuantity)
+            //int orderid = (int)RouteData.Values["id"];
+
+            TempData["ErrorMessage"] = "";
+            TempData["RegularMessage"] = "";
+
+            Box box = db.Boxes.Where(b => b.BarcodeId == boxid).FirstOrDefault();
+
+            if (box == null)
             {
-                orderList.SoldBoxQuantity++;
-                db.Entry(box).State = EntityState.Modified;
-                db.Entry(orderList).State = EntityState.Modified;
-                db.SaveChanges();
+                TempData["ErrorMessage"] = "NO ANY BOX WITH THIS ID!";
+                //throw new Exception("BOX ID NOT FOUND!");
             }
-            return RedirectToAction("Index", "OrderLists", new { id = orderList.OrderId });
+            else if (box.PartQtyLeft == 0)
+            {
+                TempData["ErrorMessage"] = "This Box has sold before!";
+            }
+            else
+            {
+                OrderList orderList = db.OrderLists.Where(s=>s.OrderId == orderid).Where(s => s.ProductId == box.ProductId).FirstOrDefault(); // each orderlist must have different SKU!!!
+                if(orderList == null)
+                {
+                    TempData["ErrorMessage"] = "NO ANY ORDER ITEMS RELATED TO THIS BOX!";
+                }
+                else
+                {
+                    if (orderList.RequestedBoxQuantity > orderList.SoldBoxQuantity)
+                    {
+                        orderList.SoldBoxQuantity++;
+                        box.PartQtyLeft = 0;
+                        db.Entry(box).State = EntityState.Modified;
+                        db.Entry(orderList).State = EntityState.Modified;
+                        db.SaveChanges();
+                        TempData["BoxId"] = boxid;
+                    }
+                }    
+            }
+            return RedirectToAction("Index", "OrderLists", new { id = (int)TempData["OrderId"]/*, r = "refreshing"*/ });
         }
+
     }
 }

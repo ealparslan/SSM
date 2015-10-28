@@ -1445,6 +1445,10 @@ a.text-warning:focus {
 .text-danger {
   color: #b94a48;
 }
+.text-danger-bg {
+  color: #b94a48;
+  font-size:xx-large
+}
 a.text-danger:hover,
 a.text-danger:focus {
   color: #953b39;
@@ -3036,6 +3040,13 @@ select[multiple].input-lg {
   .form-inline .has-feedback .form-control-feedback {
     top: 0;
   }
+}
+.rcorners4 {
+    border-radius: 15px 15px 15px 15px;
+    background: #9cafbf;
+    padding: 20px; 
+    width: 400px;
+    height: 80px; 
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox,
