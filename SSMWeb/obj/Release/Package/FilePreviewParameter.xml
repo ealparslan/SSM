@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ssmbare.cloudapp.net" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Public\\SSMSolution\\SSMWeb\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Public\\SSMSolution\\SSMWeb\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:a64uiilmgo.database.windows.net,1433;Initial Catalog=ssm;Integrated Security=False;User ID=SSMUser@a64uiilmgo;Password=8cdLc4CkZDRhujhYXZ7B;Connect Timeout=30;Encrypt=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Public\\SSMSolution\\SSMWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="SSMConnectionStringForReport-Web.config Connection String" description="" value="Data Source=DESKTOP-H0CEF7C\SQLEXPRESS;Initial Catalog=SSM;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Public\\SSMSolution\\SSMWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SSMConnectionStringForReport']/@connectionString" />
+  </parameter>
+  <parameter name="SSMOrdinaryModel-Web.config Connection String" description="" value="Data Source=tcp:a64uiilmgo.database.windows.net,1433;Initial Catalog=ssm;Integrated Security=False;User ID=SSMUser@a64uiilmgo;Password=8cdLc4CkZDRhujhYXZ7B;Connect Timeout=30;Encrypt=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Public\\SSMSolution\\SSMWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SSMOrdinaryModel']/@connectionString" />
+  </parameter>
+</parameters>

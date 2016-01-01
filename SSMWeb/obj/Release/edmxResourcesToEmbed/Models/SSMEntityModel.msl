@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSMModelStoreContainer" CdmEntityContainer="SSMEntities">
+    <EntitySetMapping Name="Barcodes">
+      <EntityTypeMapping TypeName="SSMModel.Barcode">
+        <MappingFragment StoreEntitySet="Barcodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodeNumber" ColumnName="CodeNumber" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boxes">
+      <EntityTypeMapping TypeName="SSMModel.Box">
+        <MappingFragment StoreEntitySet="Boxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BarcodeId" ColumnName="BarcodeId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="PartCapOfBox" ColumnName="PartCapOfBox" />
+          <ScalarProperty Name="PartQtyUnitID" ColumnName="PartQtyUnitID" />
+          <ScalarProperty Name="PartQtyLeft" ColumnName="PartQtyLeft" />
+          <ScalarProperty Name="BoxUnitOfTotal" ColumnName="BoxUnitOfTotal" />
+          <ScalarProperty Name="BoxTotalOfTotal" ColumnName="BoxTotalOfTotal" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COGS">
+      <EntityTypeMapping TypeName="SSMModel.COG">
+        <MappingFragment StoreEntitySet="COGS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="PartQtyUnitID" ColumnName="PartQtyUnitID" />
+          <ScalarProperty Name="SetPrice" ColumnName="SetPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deliveries">
+      <EntityTypeMapping TypeName="SSMModel.Delivery">
+        <MappingFragment StoreEntitySet="Deliveries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryLists">
+      <EntityTypeMapping TypeName="SSMModel.DeliveryList">
+        <MappingFragment StoreEntitySet="DeliveryLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="BoxQuantiy" ColumnName="BoxQuantiy" />
+          <ScalarProperty Name="PartCapOfBox" ColumnName="PartCapOfBox" />
+          <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FulfilmentSKUs">
+      <EntityTypeMapping TypeName="SSMModel.FulfilmentSKU">
+        <MappingFragment StoreEntitySet="FulfilmentSKUs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SCName" ColumnName="SCName" />
+          <ScalarProperty Name="ASIN" ColumnName="ASIN" />
+          <ScalarProperty Name="IsDiscontinued" ColumnName="IsDiscontinued" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="SSMModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderLists">
+      <EntityTypeMapping TypeName="SSMModel.OrderList">
+        <MappingFragment StoreEntitySet="OrderLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+          <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+          <ScalarProperty Name="SalesChannel" ColumnName="SalesChannel" />
+          <ScalarProperty Name="BoxId" ColumnName="BoxId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="SoldQty" ColumnName="SoldQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SSMModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+          <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+          <ScalarProperty Name="SalesChannel" ColumnName="SalesChannel" />
+          <ScalarProperty Name="OrderListId" ColumnName="OrderListId" />
+          <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategories">
+      <EntityTypeMapping TypeName="SSMModel.ProductCategory">
+        <MappingFragment StoreEntitySet="ProductCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Aliases" ColumnName="Aliases" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductColors">
+      <EntityTypeMapping TypeName="SSMModel.ProductColor">
+        <MappingFragment StoreEntitySet="ProductColors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Aliases" ColumnName="Aliases" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SSMModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="FulfilmentSKUId" ColumnName="FulfilmentSKUId" />
+          <ScalarProperty Name="Aliases" ColumnName="Aliases" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="IsDiscontinued" ColumnName="IsDiscontinued" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+          <ScalarProperty Name="PartQtyUnitID" ColumnName="PartQtyUnitID" />
+          <ScalarProperty Name="COGSId" ColumnName="COGSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSizes">
+      <EntityTypeMapping TypeName="SSMModel.ProductSize">
+        <MappingFragment StoreEntitySet="ProductSizes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dimentions" ColumnName="Dimentions" />
+          <ScalarProperty Name="Property1" ColumnName="Property1" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuantityUnits">
+      <EntityTypeMapping TypeName="SSMModel.QuantityUnit">
+        <MappingFragment StoreEntitySet="QuantityUnits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipmentLists">
+      <EntityTypeMapping TypeName="SSMModel.ShipmentList">
+        <MappingFragment StoreEntitySet="ShipmentLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="BoxCapacity" ColumnName="BoxCapacity" />
+          <ScalarProperty Name="BoxQuantity" ColumnName="BoxQuantity" />
+          <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipments">
+      <EntityTypeMapping TypeName="SSMModel.Shipment">
+        <MappingFragment StoreEntitySet="Shipments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUserId" ColumnName="UpdatedUserId" />
+          <ScalarProperty Name="LoadedDate" ColumnName="LoadedDate" />
+          <ScalarProperty Name="ContainerName" ColumnName="ContainerName" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="BoxQuantity" ColumnName="BoxQuantity" />
+          <ScalarProperty Name="DestinationCity" ColumnName="DestinationCity" />
+          <ScalarProperty Name="ETD" ColumnName="ETD" />
+          <ScalarProperty Name="ContainerType" ColumnName="ContainerType" />
+          <ScalarProperty Name="PickupReferanceID" ColumnName="PickupReferanceID" />
+          <ScalarProperty Name="VesselName" ColumnName="VesselName" />
+          <ScalarProperty Name="FreightCompany" ColumnName="FreightCompany" />
+          <ScalarProperty Name="IsAirShipment" ColumnName="IsAirShipment" />
+          <ScalarProperty Name="IsCustomsCleared" ColumnName="IsCustomsCleared" />
+          <ScalarProperty Name="IsDelivered" ColumnName="IsDelivered" />
+          <ScalarProperty Name="IsCustomsPaid" ColumnName="IsCustomsPaid" />
+          <ScalarProperty Name="IsFreightPaid" ColumnName="IsFreightPaid" />
+          <ScalarProperty Name="CustomsAmount" ColumnName="CustomsAmount" />
+          <ScalarProperty Name="FreightAmount" ColumnName="FreightAmount" />
+          <ScalarProperty Name="HandlingFeeAmount" ColumnName="HandlingFeeAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

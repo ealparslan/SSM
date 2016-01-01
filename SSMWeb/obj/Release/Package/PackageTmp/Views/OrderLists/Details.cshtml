@@ -1,0 +1,50 @@
+﻿@model SSMWeb.Models.OrderList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.OrderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestedBoxQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestedBoxQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldBoxQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldBoxQuantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,91 @@
+﻿@model SSMWeb.Models.ShipmentList
+
+<script>
+//Select2
+$.getScript('../../Scripts/select2.min.js',function(){
+  var select = $('#select2').select2();
+}); 
+$(document).ready(function() {});
+</script>
+
+<script type="text/javascript">
+    function SelectAction(id) {
+        $.ajax({
+            url: '@Url.Action("SelectAction", "ShipmentLists")',
+            type: "POST",
+            data: { "id": id },
+            "success": function (data) {
+                if (data != null) {
+                    $("#BoxCapacity").val(data);
+                }
+            },
+        });
+    }
+</script>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ShipmentList</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShipmentId, "Shipment", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ShipmentId", null, new { @disabled = "disabled" } )
+                @Html.ValidationMessageFor(model => model.ShipmentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, "Product SKU", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.DropDownList("ProductId", null,"Select product SKU", htmlAttributes: new {id="select2", @class = "form-control", onchange = "SelectAction(this.value);" })
+                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BoxCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BoxCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BoxCapacity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BoxQuantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BoxQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BoxQuantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Add" class="btn btn-default" name="Create" />
+            </div>
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Add More" class="btn btn-default" name="Create"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Datepicker - Default functionality</title>
+
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/spacelab.css" rel="stylesheet" />
+    <link href="/Content/site.css" rel="stylesheet" />
+    <link href="/Content/select2.css" rel="stylesheet" />
+    <link href="/Content/select2-bootstrap.css" rel="stylesheet" />
+
+    <link href="/Content/jquery.dataTables.css" rel="stylesheet" />
+    <link href="/Content/dataTables.colVis.css" rel="stylesheet" />
+
+
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/jquery-ui.js"></script>
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="/Scripts/jquery.dataTables.js"></script>
+    <script src="/Scripts/dataTables.bootstrap.js"></script>
+    <script src="/Scripts/dataTables.colReorder.js"></script>
+    <script src="/Scripts/dataTables.colVis.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Dob").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+    /* Table initialization */
+    $(document).ready(function () {
+        var table = $('#richtable').DataTable({
+            "dom": 'Rlfrtip',
+            stateSave: true,
+            colReorder: {
+                realtime: true
+            }
+        });
+        var colvis = new $.fn.dataTable.ColVis(table);
+        $(colvis.button()).insertAfter('div.info');
+    });
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+
+    <p>Date:<input type="text" id="Dob" class="datefield" /></p>
+
+
+</body>
+</html>

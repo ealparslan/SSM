@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Barcodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodeNumber" Type="nvarchar(max)" />
+    <Property Name="CodeType" Type="nvarchar(max)" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="Boxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BarcodeId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="PartCapOfBox" Type="int" Nullable="false" />
+    <Property Name="PartQtyUnitID" Type="int" Nullable="false" />
+    <Property Name="PartQtyLeft" Type="int" Nullable="false" />
+    <Property Name="BoxUnitOfTotal" Type="int" Nullable="false" />
+    <Property Name="BoxTotalOfTotal" Type="int" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="DeliveryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COGS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitPrice" Type="nvarchar(max)" />
+    <Property Name="PartQtyUnitID" Type="nvarchar(max)" />
+    <Property Name="SetPrice" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Deliveries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ShipmentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeliveryLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="nvarchar(max)" />
+    <Property Name="BoxQuantiy" Type="nvarchar(max)" />
+    <Property Name="PartCapOfBox" Type="nvarchar(max)" />
+    <Property Name="DeliveryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FulfilmentSKUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SKU" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="SCName" Type="nvarchar(max)" />
+    <Property Name="ASIN" Type="nvarchar(max)" />
+    <Property Name="IsDiscontinued" Type="bit" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SoldDate" Type="datetime" Nullable="false" />
+    <Property Name="SalesChannel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BoxId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="SoldQty" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SoldDate" Type="datetime" Nullable="false" />
+    <Property Name="SalesChannel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderListId" Type="int" Nullable="false" />
+    <Property Name="OrderAmount" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Aliases" Type="nvarchar(max)" />
+    <Property Name="IsEnabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductColors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Aliases" Type="nvarchar(max)" />
+    <Property Name="IsEnabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SKU" Type="nvarchar(max)" />
+    <Property Name="FulfilmentSKUId" Type="int" Nullable="false" />
+    <Property Name="Aliases" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="IsDiscontinued" Type="bit" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="ColorId" Type="int" Nullable="false" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="PartQtyUnitID" Type="int" Nullable="false" />
+    <Property Name="COGSId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSizes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Dimentions" Type="nvarchar(max)" />
+    <Property Name="Property1" Type="nvarchar(max)" />
+    <Property Name="IsEnabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="QuantityUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ShipmentLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="BoxCapacity" Type="nvarchar(max)" />
+    <Property Name="BoxQuantity" Type="nvarchar(max)" />
+    <Property Name="ShipmentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shipments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedUserId" Type="nvarchar(max)" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUserId" Type="nvarchar(max)" />
+    <Property Name="LoadedDate" Type="datetime" />
+    <Property Name="ContainerName" Type="nvarchar(max)" />
+    <Property Name="PONumber" Type="nvarchar(max)" />
+    <Property Name="BoxQuantity" Type="bigint" />
+    <Property Name="DestinationCity" Type="nvarchar(max)" />
+    <Property Name="ETD" Type="datetime" />
+    <Property Name="ContainerType" Type="nvarchar(max)" />
+    <Property Name="PickupReferanceID" Type="nvarchar(max)" />
+    <Property Name="VesselName" Type="nvarchar(max)" />
+    <Property Name="FreightCompany" Type="nvarchar(max)" />
+    <Property Name="IsAirShipment" Type="bit" />
+    <Property Name="IsCustomsCleared" Type="bit" />
+    <Property Name="IsDelivered" Type="bit" />
+    <Property Name="IsCustomsPaid" Type="bit" />
+    <Property Name="IsFreightPaid" Type="bit" />
+    <Property Name="CustomsAmount" Type="float" />
+    <Property Name="FreightAmount" Type="float" />
+    <Property Name="HandlingFeeAmount" Type="float" />
+  </EntityType>
+  <Association Name="FK_Boxes_Barcodes">
+    <End Role="Barcodes" Type="Self.Barcodes" Multiplicity="1" />
+    <End Role="Boxes" Type="Self.Boxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barcodes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Boxes">
+        <PropertyRef Name="BarcodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COGSProducts">
+    <End Role="COGS" Type="Self.COGS" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COGS">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="COGSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveryDeliveryList">
+    <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1" />
+    <End Role="DeliveryLists" Type="Self.DeliveryLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deliveries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeliveryLists">
+        <PropertyRef Name="DeliveryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FulfilmentSKUProducts">
+    <End Role="FulfilmentSKUs" Type="Self.FulfilmentSKUs" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FulfilmentSKUs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="FulfilmentSKUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationBoxes">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
+    <End Role="Boxes" Type="Self.Boxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Boxes">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderListsBoxes">
+    <End Role="Boxes" Type="Self.Boxes" Multiplicity="1" />
+    <End Role="OrderLists" Type="Self.OrderLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Boxes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderLists">
+        <PropertyRef Name="BoxId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderListsOrders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderLists" Type="Self.OrderLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderLists">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategoriesProducts">
+    <End Role="ProductCategories" Type="Self.ProductCategories" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductColorProducts">
+    <End Role="ProductColors" Type="Self.ProductColors" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductColors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsBoxes">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Boxes" Type="Self.Boxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Boxes">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSizeProducts">
+    <End Role="ProductSizes" Type="Self.ProductSizes" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSizes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsShipmentList">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ShipmentLists" Type="Self.ShipmentLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShipmentLists">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuantityUnitProducts">
+    <End Role="QuantityUnits" Type="Self.QuantityUnits" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuantityUnits">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="PartQtyUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentsShipmentLists">
+    <End Role="Shipments" Type="Self.Shipments" Multiplicity="1" />
+    <End Role="ShipmentLists" Type="Self.ShipmentLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShipmentLists">
+        <PropertyRef Name="ShipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SSMModelStoreContainer">
+    <EntitySet Name="Barcodes" EntityType="Self.Barcodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Boxes" EntityType="Self.Boxes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COGS" EntityType="Self.COGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deliveries" EntityType="Self.Deliveries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeliveryLists" EntityType="Self.DeliveryLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FulfilmentSKUs" EntityType="Self.FulfilmentSKUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderLists" EntityType="Self.OrderLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductColors" EntityType="Self.ProductColors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductSizes" EntityType="Self.ProductSizes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuantityUnits" EntityType="Self.QuantityUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShipmentLists" EntityType="Self.ShipmentLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipments" EntityType="Self.Shipments" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Boxes_Barcodes" Association="Self.FK_Boxes_Barcodes">
+      <End Role="Barcodes" EntitySet="Barcodes" />
+      <End Role="Boxes" EntitySet="Boxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COGSProducts" Association="Self.FK_COGSProducts">
+      <End Role="COGS" EntitySet="COGS" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveryDeliveryList" Association="Self.FK_DeliveryDeliveryList">
+      <End Role="Deliveries" EntitySet="Deliveries" />
+      <End Role="DeliveryLists" EntitySet="DeliveryLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FulfilmentSKUProducts" Association="Self.FK_FulfilmentSKUProducts">
+      <End Role="FulfilmentSKUs" EntitySet="FulfilmentSKUs" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationBoxes" Association="Self.FK_LocationBoxes">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Boxes" EntitySet="Boxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderListsBoxes" Association="Self.FK_OrderListsBoxes">
+      <End Role="Boxes" EntitySet="Boxes" />
+      <End Role="OrderLists" EntitySet="OrderLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderListsOrders" Association="Self.FK_OrderListsOrders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderLists" EntitySet="OrderLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategoriesProducts" Association="Self.FK_ProductCategoriesProducts">
+      <End Role="ProductCategories" EntitySet="ProductCategories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductColorProducts" Association="Self.FK_ProductColorProducts">
+      <End Role="ProductColors" EntitySet="ProductColors" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsBoxes" Association="Self.FK_ProductsBoxes">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Boxes" EntitySet="Boxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSizeProducts" Association="Self.FK_ProductSizeProducts">
+      <End Role="ProductSizes" EntitySet="ProductSizes" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsShipmentList" Association="Self.FK_ProductsShipmentList">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ShipmentLists" EntitySet="ShipmentLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuantityUnitProducts" Association="Self.FK_QuantityUnitProducts">
+      <End Role="QuantityUnits" EntitySet="QuantityUnits" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentsShipmentLists" Association="Self.FK_ShipmentsShipmentLists">
+      <End Role="Shipments" EntitySet="Shipments" />
+      <End Role="ShipmentLists" EntitySet="ShipmentLists" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

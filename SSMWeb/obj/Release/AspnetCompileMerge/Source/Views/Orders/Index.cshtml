@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SSMWeb.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="richtable" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoldDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesChannel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderAmount)
+            </th>
+        </tr>
+        </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td nowrap>
+                    @Html.ActionLink("Add New Item", "AddNewItem", new { id = item.Id }, new { @class = "addNewItem" })
+                    @Html.ActionLink("List Items", "ListItems", new { id = item.Id }, new { @class = "listItems" })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "edit" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "details" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoldDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalesChannel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderAmount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

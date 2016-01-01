@@ -1,0 +1,174 @@
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\SSMWeb.dll.config
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\SSMWeb.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\SSMWeb.pdb
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Antlr3.Runtime.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\EntityFramework.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Newtonsoft.Json.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Owin.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Helpers.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Mvc.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Optimization.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Razor.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\WebGrease.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Helpers.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Mvc.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Optimization.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.Razor.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Antlr3.Runtime.pdb
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Newtonsoft.Json.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\EntityFramework.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\obj\Debug\SSMWeb.dll
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\obj\Debug\SSMWeb.pdb
+C:\Users\Erdem\Documents\Visual Studio 2013\Projects\SSMSolution\SSMSolution\SSMWeb\obj\Debug\SSMWeb.csprojResolveAssemblyReference.cache
+C:\Users\Public\SSMSolution\SSMWeb\bin\SSMWeb.dll.config
+C:\Users\Public\SSMSolution\SSMWeb\bin\SSMWeb.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\SSMWeb.pdb
+C:\Users\Public\SSMSolution\SSMWeb\bin\Antlr3.Runtime.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\EntityFramework.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Newtonsoft.Json.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\Owin.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Helpers.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Mvc.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Optimization.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Razor.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\WebGrease.dll
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Helpers.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Mvc.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Razor.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\System.Web.Optimization.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Antlr3.Runtime.pdb
+C:\Users\Public\SSMSolution\SSMWeb\bin\Newtonsoft.Json.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\EntityFramework.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Public\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Public\SSMSolution\SSMWeb\obj\Debug\RdlCompile.cache
+C:\Users\Public\SSMSolution\SSMWeb\obj\Debug\RdlCompile.compiled
+C:\Users\Public\SSMSolution\SSMWeb\obj\Debug\SSMWeb.dll
+C:\Users\Public\SSMSolution\SSMWeb\obj\Debug\SSMWeb.pdb
+C:\Users\Public\SSMSolution\SSMWeb\obj\Debug\SSMWeb.csprojResolveAssemblyReference.cache
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\SSMWeb.dll.config
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\SSMWeb.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\SSMWeb.pdb
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Antlr3.Runtime.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\EntityFramework.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Newtonsoft.Json.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Owin.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Helpers.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Mvc.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Optimization.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Razor.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\WebGrease.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Helpers.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Mvc.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Razor.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\System.Web.Optimization.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Antlr3.Runtime.pdb
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Newtonsoft.Json.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\EntityFramework.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\obj\Debug\RdlCompile.cache
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\obj\Debug\RdlCompile.compiled
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\obj\Debug\SSMWeb.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\obj\Debug\SSMWeb.pdb
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Erdem\Documents\SSMSolution\SSMWeb\bin\Microsoft.ReportViewer.WebForms.xml

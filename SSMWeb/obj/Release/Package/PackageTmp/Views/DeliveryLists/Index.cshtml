@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SSMWeb.Models.DeliveryList>
+
+@{
+    ViewBag.Title = "Delivery Items";
+}
+
+<h2>Delivery Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="richtable" class="display">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Delivery.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.SKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoxQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartCapOfBox)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td nowrap>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "edit" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "details" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete" })
+                    @Html.ActionLink("Box", "Box", new { id = item.Id }, new { @class = "box", onclick = "return confirm('Are you sure you wish to print barcodes for only this DELIVERY ITEM?');" })
+                    @if (item.BarcodesPrinted)
+                    {
+                        @Html.ActionLink("PrintBarcodes", "PrintBarcodes", new { id = item.Id }, new { @class = "print", target = "_blank" })
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Delivery.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.SKU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoxQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartCapOfBox)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
