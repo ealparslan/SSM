@@ -11,6 +11,7 @@ using SSMWeb.Models;
 
 namespace SSMWeb.Controllers.Order
 {
+    [Authorize(Roles = "stocker, admin")]
     public class OrderListsController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
@@ -174,7 +175,7 @@ namespace SSMWeb.Controllers.Order
             }
             else if (box.PartQtyLeft == 0)
             {
-                TempData["ErrorMessage"] = "This Box has sold before!";
+                TempData["ErrorMessage"] = "This Box has been sold before!";
             }
             else
             {

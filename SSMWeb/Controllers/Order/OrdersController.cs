@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace SSMWeb.Models
 {
+    [Authorize(Roles = "stocker, admin")]
     public class OrdersController : Controller
     {
         private SSMOrdinaryModel db = new SSMOrdinaryModel();

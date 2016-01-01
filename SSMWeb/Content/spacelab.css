@@ -1431,6 +1431,10 @@ a.text-success:focus {
 .text-info {
   color: #3a87ad;
 }
+.text-info-bg {
+  color: #3a87ad;
+  font-size:xx-large
+}
 a.text-info:hover,
 a.text-info:focus {
   color: #2d6987;
