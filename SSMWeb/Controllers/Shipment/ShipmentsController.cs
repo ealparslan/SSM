@@ -163,6 +163,16 @@ namespace SSMWeb.Models
         public ActionResult Undelivered(int? id)
         {
             Shipment shipment = db.Shipments.Find(id);
+            HashSet<DeliveryList> list = shipment.Deliveries.FirstOrDefault().DeliveryLists;
+            foreach (DeliveryList item in list)
+            {
+                if (item.BarcodesPrinted)
+                {
+                    TempData["ErrorMessage"] = "At least one item in this delivery was boxed and barcoded. You cannot undeliver a shipment after barcodes printed!";
+                    return RedirectToAction("Index");
+                }
+            }
+
             shipment.IsDelivered = false;
             db.Entry(shipment).State = EntityState.Modified;
             db.SaveChanges();

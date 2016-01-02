@@ -49,7 +49,7 @@ namespace SSMWeb.Controllers.Order
         {
 
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", id);
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
 
             return View();
         }
@@ -101,7 +101,7 @@ namespace SSMWeb.Controllers.Order
                 return HttpNotFound();
             }
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", orderList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", orderList.ProductId);
             return View(orderList);
         }
 
@@ -119,7 +119,7 @@ namespace SSMWeb.Controllers.Order
                 return RedirectToAction("Index");
             }
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", orderList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", orderList.ProductId);
             return View(orderList);
         }
 

@@ -138,7 +138,7 @@ namespace SSMWeb.Models
             foreach (DeliveryList deliveryList in delivery.DeliveryLists)
             {
                 BoxesController boxer = new BoxesController();
-                boxer.Create(deliveryList.ProductId, 0, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID, deliveryList.PartCapOfBox);
+                boxer.Create(deliveryList.ProductId,1, deliveryList.Id, deliveryList.BoxQuantity, deliveryList.PartCapOfBox, deliveryList.Product.PartQtyUnitID, deliveryList.PartCapOfBox);
                 if (ModelState.IsValid)
                 {
                     deliveryList.BarcodesPrinted = true;

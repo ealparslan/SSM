@@ -21,6 +21,9 @@ $(document).ready(function() {});
             },
         });
     }
+    function ROnlySelectAction(id) {
+        alert('You cannot change Shipment information of a sub item!')
+    }
 </script>
 
 @{
@@ -42,7 +45,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.ShipmentId, "Shipment", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShipmentId", null, new { @disabled = "disabled" } )
+                @Html.DropDownList("ShipmentId", null, htmlAttributes : new { @class = "form-control", @readonly = "true" , onclick = "ROnlySelectAction(this.value);" } )
                 @Html.ValidationMessageFor(model => model.ShipmentId, "", new { @class = "text-danger" })
             </div>
         </div>

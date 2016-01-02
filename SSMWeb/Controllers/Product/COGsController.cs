@@ -40,7 +40,7 @@ namespace SSMWeb.Models
         // GET: COGs/Create
         public ActionResult Create()
         {
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 
@@ -73,7 +73,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 
@@ -90,7 +90,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", cOG.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", cOG.ProductId);
             return View(cOG);
         }
 

@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products./*Include(p => p.FulfilmentSKU).*/Include(p => p.ProductCategory).Include(p => p.ProductColor).Include(p => p.ProductSize).Include(p => p.QuantityUnit);
+            var products = db.Products./*Include(p => p.FulfilmentSKU).*/Include(p => p.ProductCategory).Include(p => p.ProductColor).Include(p => p.ProductSize).Include(p => p.QuantityUnit).Where(p=>p.IsDeleted == false);
             return View(products.ToList());
         }
 
@@ -42,11 +42,11 @@ namespace SSMWeb.Models
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU");
-            ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name");
-            ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name");
-            ViewBag.SizeId = new SelectList(db.ProductSizes, "Id", "Name");
-            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits, "Id", "Name");
+            //ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU");
+            ViewBag.CategoryId = new SelectList(db.ProductCategories.Where(c=>c.IsEnabled == true), "Id", "Name");
+            ViewBag.ColorId = new SelectList(db.ProductColors.Where(c => c.IsEnabled == true), "Id", "Name");
+            ViewBag.SizeId = new SelectList(db.ProductSizes.Where(c => c.IsEnabled == true), "Id", "Name");
+            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits.Where(c => c.IsEnabled == true), "Id", "Name");
             return View();
         }
 
@@ -57,20 +57,38 @@ namespace SSMWeb.Models
         [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
+        public ActionResult Create([Bind(Include = "Id,SKU,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity,IsDeleted")] Product product)
         {
-            if (ModelState.IsValid)
+            if (product.PartQtyUnitID == 0)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["ErrorMessage"] = "PartQuantity must be filled!";
             }
-
-            ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
-            ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
-            ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
-            ViewBag.SizeId = new SelectList(db.ProductSizes, "Id", "Name", product.SizeId);
-            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits, "Id", "Name", product.PartQtyUnitID);
+            else if (product.SizeId == 0)
+            {
+                TempData["ErrorMessage"] = "Size must be filled!";
+            }
+            else if (product.CategoryId == 0)
+            {
+                TempData["ErrorMessage"] = "Category must be filled!";
+            }
+            else if (product.ColorId == 0)
+            {
+                TempData["ErrorMessage"] = "Color must be filled!";
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            //ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
+            ViewBag.CategoryId = new SelectList(db.ProductCategories.Where(c => c.IsEnabled == true), "Id", "Name", product.CategoryId);
+            ViewBag.ColorId = new SelectList(db.ProductColors.Where(c => c.IsEnabled == true), "Id", "Name", product.ColorId);
+            ViewBag.SizeId = new SelectList(db.ProductSizes.Where(c => c.IsEnabled == true), "Id", "Name", product.SizeId);
+            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits.Where(c => c.IsEnabled == true), "Id", "Name", product.PartQtyUnitID);
             return View(product);
         }
 
@@ -87,11 +105,11 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
-            ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
-            ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
-            ViewBag.SizeId = new SelectList(db.ProductSizes, "Id", "Name", product.SizeId);
-            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits, "Id", "Name", product.PartQtyUnitID);
+            //ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
+            ViewBag.CategoryId = new SelectList(db.ProductCategories.Where(c => c.IsEnabled == true), "Id", "Name", product.CategoryId);
+            ViewBag.ColorId = new SelectList(db.ProductColors.Where(c => c.IsEnabled == true), "Id", "Name", product.ColorId);
+            ViewBag.SizeId = new SelectList(db.ProductSizes.Where(c => c.IsEnabled == true), "Id", "Name", product.SizeId);
+            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits.Where(c => c.IsEnabled == true), "Id", "Name", product.PartQtyUnitID);
             return View(product);
         }
 
@@ -101,19 +119,38 @@ namespace SSMWeb.Models
         [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SKU,FulfilmentSKUId,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,SKU,Aliases,Name,ParentId,IsDiscontinued,CategoryId,ColorId,SizeId,PartQtyUnitID,BoxCapacity,IsDeleted")] Product product)
         {
-            if (ModelState.IsValid)
+            if (product.PartQtyUnitID == 0)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["ErrorMessage"] = "PartQuantity must be filled!";
             }
-            ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
-            ViewBag.CategoryId = new SelectList(db.ProductCategories, "Id", "Name", product.CategoryId);
-            ViewBag.ColorId = new SelectList(db.ProductColors, "Id", "Name", product.ColorId);
-            ViewBag.SizeId = new SelectList(db.ProductSizes, "Id", "Name", product.SizeId);
-            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits, "Id", "Name", product.PartQtyUnitID);
+            else if (product.SizeId == 0)
+            {
+                TempData["ErrorMessage"] = "Size must be filled!";
+            }
+            else if (product.CategoryId == 0)
+            {
+                TempData["ErrorMessage"] = "Category must be filled!";
+            }
+            else if (product.ColorId == 0)
+            {
+                TempData["ErrorMessage"] = "Color must be filled!";
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Entry(product).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            //ViewBag.FulfilmentSKUId = new SelectList(db.FulfilmentSKUs, "Id", "SKU", product.FulfilmentSKUId);
+            ViewBag.CategoryId = new SelectList(db.ProductCategories.Where(c => c.IsEnabled == true), "Id", "Name", product.CategoryId);
+            ViewBag.ColorId = new SelectList(db.ProductColors.Where(c => c.IsEnabled == true), "Id", "Name", product.ColorId);
+            ViewBag.SizeId = new SelectList(db.ProductSizes.Where(c => c.IsEnabled == true), "Id", "Name", product.SizeId);
+            ViewBag.PartQtyUnitID = new SelectList(db.QuantityUnits.Where(c => c.IsEnabled == true), "Id", "Name", product.PartQtyUnitID);
             return View(product);
         }
 
@@ -140,7 +177,7 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            product.IsDeleted = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

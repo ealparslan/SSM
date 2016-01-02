@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: ProductColors
         public ActionResult Index()
         {
-            return View(db.ProductColors.ToList());
+            return View(db.ProductColors.Where(c=>c.IsEnabled == true).ToList());
         }
 
         // GET: ProductColors/Details/5
@@ -113,7 +113,14 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             ProductColor productColor = db.ProductColors.Find(id);
-            db.ProductColors.Remove(productColor);
+
+            if (db.Products.Where(p => p.ProductColor.Id == id && p.IsDeleted == false).FirstOrDefault() != null)
+            {
+                TempData["ErrorMessage"] = "At least one Product is using this color. Delete the product first!";
+                return View(productColor);
+            }
+            productColor.IsEnabled = false;  
+            //db.ProductColors.Remove(productColor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

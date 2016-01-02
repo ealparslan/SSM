@@ -50,10 +50,10 @@ namespace SSMWeb.Models
                 .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<FulfilmentSKU>()
-                .HasMany(e => e.Products)
-                .WithRequired(e => e.FulfilmentSKU)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<FulfilmentSKU>()
+            //    .HasMany(e => e.Products)
+            //    .WithRequired(e => e.FulfilmentSKU)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ProductCategory>()
                 .HasMany(e => e.Products)

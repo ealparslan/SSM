@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: ProductCategories
         public ActionResult Index()
         {
-            return View(db.ProductCategories.ToList());
+            return View(db.ProductCategories.Where(c=>c.IsEnabled==true).ToList());
         }
 
         // GET: ProductCategories/Details/5
@@ -113,7 +113,14 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             ProductCategory productCategory = db.ProductCategories.Find(id);
-            db.ProductCategories.Remove(productCategory);
+
+            if (db.Products.Where(p => p.ProductCategory.Id == id && p.IsDeleted == false).FirstOrDefault() != null)
+            {
+                TempData["ErrorMessage"] = "At least one Product is using this category. Delete the product first!";
+                return View(productCategory);
+            }
+            productCategory.IsEnabled = false;
+            //db.ProductCategories.Remove(productCategory);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

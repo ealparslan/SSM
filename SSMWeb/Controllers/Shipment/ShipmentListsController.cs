@@ -58,8 +58,8 @@ namespace SSMWeb.Models
 
         public ActionResult Create(int id)
         {
-            //Shipment shipment = db.Shipments.Find(id);
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            Shipment shipment = db.Shipments.Find(id);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", id);
 
             return View();
@@ -94,7 +94,7 @@ namespace SSMWeb.Models
                 };
                     
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            ViewBag.ProductId = new SelectList(db.Products.Where(p=>p.IsDeleted==false), "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
             return View(shipmentList);
         }
@@ -111,7 +111,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", shipmentList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", shipmentList.ShipmentId);
             
             return View(shipmentList);
@@ -130,7 +130,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index","Shipments");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", shipmentList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", shipmentList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Products, "Id", "shipmentList.Shipment.ContainerName", shipmentList.ShipmentId);
             return View(shipmentList);
         }

@@ -18,6 +18,9 @@ namespace SSMWeb.Models
         [Required]
         public string Description { get; set; }
 
+        [DisplayName("Is Enabled")]
+        public bool IsEnabled { get; set; }
+
         public virtual HashSet<Product> Products { get; set; }
     }
 }

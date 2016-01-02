@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: QuantityUnits
         public ActionResult Index()
         {
-            return View(db.QuantityUnits.ToList());
+            return View(db.QuantityUnits.Where(q=>q.IsEnabled==true).ToList());
         }
 
         // GET: QuantityUnits/Details/5
@@ -39,7 +39,9 @@ namespace SSMWeb.Models
         // GET: QuantityUnits/Create
         public ActionResult Create()
         {
-            return View();
+            var quantityUnit = new QuantityUnit();
+            quantityUnit.IsEnabled = true;
+            return View(quantityUnit);
         }
 
         // POST: QuantityUnits/Create
@@ -47,7 +49,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] QuantityUnit quantityUnit)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,IsEnabled")] QuantityUnit quantityUnit)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +81,7 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] QuantityUnit quantityUnit)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,IsEnabled")] QuantityUnit quantityUnit)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +113,14 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             QuantityUnit quantityUnit = db.QuantityUnits.Find(id);
-            db.QuantityUnits.Remove(quantityUnit);
+
+            if (db.Products.Where(p => p.QuantityUnit.Id == id && p.IsDeleted == false).FirstOrDefault() != null)
+            {
+                TempData["ErrorMessage"] = "At least one Product is using this unit. Delete the product first!";
+                return View(quantityUnit);
+            }
+            quantityUnit.IsEnabled = false;
+            //db.QuantityUnits.Remove(quantityUnit);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

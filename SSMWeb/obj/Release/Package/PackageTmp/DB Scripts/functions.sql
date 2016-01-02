@@ -1,5 +1,4 @@
-﻿USE [ssm]
-GO
+﻿
 
 /****** Object:  UserDefinedFunction [dbo].[getSoldAmountRequested]    Script Date: 10/25/2015 2:33:24 AM ******/
 SET ANSI_NULLS ON
@@ -24,10 +23,6 @@ END
 
 
 
-GO
-
-
-USE [ssm]
 GO
 
 /****** Object:  UserDefinedFunction [dbo].[getRequestedAmountRequested]    Script Date: 10/25/2015 2:33:16 AM ******/
@@ -56,11 +51,6 @@ END
 GO
 
 
-
-
-USE [ssm]
-GO
-
 /****** Object:  Trigger [dbo].[ShipmentDeliveredCancel]    Script Date: 10/25/2015 2:33:08 AM ******/
 SET ANSI_NULLS ON
 GO
@@ -83,11 +73,6 @@ CREATE TRIGGER [dbo].[ShipmentDeliveredCancel]
 GO
 
 
-
-
-USE [ssm]
-GO
-
 /****** Object:  Trigger [dbo].[ShipmentDelivered]    Script Date: 10/25/2015 2:33:03 AM ******/
 SET ANSI_NULLS ON
 GO
@@ -96,22 +81,22 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+
+
 create TRIGGER [dbo].[ShipmentDelivered]
   ON [dbo].[Shipments]
   FOR UPDATE AS 
 
   IF UPDATE(IsDelivered)
   BEGIN
-	INSERT INTO [dbo].[Deliveries] ([Date],[ShipmentId]) 
-		SELECT GETDATE(),Id FROM inserted WHERE IsDelivered = 1
+	INSERT INTO [dbo].[Deliveries] ([Date],[ShipmentId],[BarcodesPrinted]) 
+		SELECT GETDATE(),Id, 'false' as [BarcodesPrinted] FROM inserted WHERE IsDelivered = 1
 
-	INSERT INTO [dbo].[DeliveryLists] ([ProductId],[BoxQuantity],[PartCapOfBox],[DeliveryId]) 
-		SELECT s.[ProductId],s.[BoxQuantity],s.[BoxCapacity],d.[Id] FROM [dbo].[ShipmentLists] s, [dbo].[Deliveries] d
+	INSERT INTO [dbo].[DeliveryLists] ([ProductId],[BoxQuantity],[PartCapOfBox],[DeliveryId],[BarcodesPrinted]) 
+		SELECT s.[ProductId],s.[BoxQuantity],s.[BoxCapacity],d.[Id],'false' as [BarcodesPrinted] FROM [dbo].[ShipmentLists] s, [dbo].[Deliveries] d
 			WHERE s.ShipmentId = (SELECT Id FROM inserted WHERE IsDelivered = 1)
 					AND s.ShipmentId = d.ShipmentId
   END
 
 
 GO
-
-

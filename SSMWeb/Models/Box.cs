@@ -30,7 +30,7 @@ namespace SSMWeb.Models
         [DisplayName("Box Unit of Total")]
         public int BoxUnitOfTotal { get; set; }
 
-        [DisplayName("Boz Total of Total")]
+        [DisplayName("Box Total of Total")]
         public int BoxTotalOfTotal { get; set; }
 
         public string PONumber { get; set; }

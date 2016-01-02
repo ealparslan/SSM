@@ -23,6 +23,6 @@ namespace SSMWeb.Models
         [DisplayName("Is Discontinued")]
         public bool IsDiscontinued { get; set; }
 
-        public virtual HashSet<Product> Products { get; set; }
+        //public virtual HashSet<Product> Products { get; set; }
     }
 }

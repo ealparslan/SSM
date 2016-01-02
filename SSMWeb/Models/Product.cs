@@ -13,8 +13,8 @@ namespace SSMWeb.Models
 
         public string SKU { get; set; }
 
-        [DisplayName("Fulfilment SKU Id")]
-        public int FulfilmentSKUId { get; set; }
+        //[DisplayName("Fulfilment SKU Id")]
+        //public int FulfilmentSKUId { get; set; }
 
         public string Aliases { get; set; }
 
@@ -26,20 +26,27 @@ namespace SSMWeb.Models
         [DisplayName("Is Discontinued")]
         public bool IsDiscontinued { get; set; }
 
+        [Required]
         [DisplayName("Category Id")]
         public int CategoryId { get; set; }
 
+        [Required]
         [DisplayName("Color Id")]
         public int ColorId { get; set; }
 
+        [Required]
         [DisplayName("Size Id")]
         public int SizeId { get; set; }
 
+        [Required]
         [DisplayName("Part Quantity Unit Id")]
         public int PartQtyUnitID { get; set; }
 
+        [Required]
         [DisplayName("Box Capacity")]
         public int BoxCapacity { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         public virtual HashSet<COG> COGs { get; set; }
 
@@ -51,7 +58,7 @@ namespace SSMWeb.Models
 
         public virtual ProductSize ProductSize { get; set; }
 
-        public virtual FulfilmentSKU FulfilmentSKU { get; set; }
+        //public virtual FulfilmentSKU FulfilmentSKU { get; set; }
 
         public virtual HashSet<Box> Boxes { get; set; }
 

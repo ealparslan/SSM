@@ -35,6 +35,16 @@
     </script>
 
 
+    <script>
+        $(document).ready(function () {
+            if( '@TempData["ErrorMessage"]' != "")
+            {
+                alert('@TempData["ErrorMessage"]');
+            }
+        });
+    </script>
+
+
 
     <script type="text/javascript" language="javascript">
         /* Table initialization */
@@ -55,7 +65,7 @@
 
 
     </head>
-    <body>
+    <body onload="alertError">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -78,7 +88,7 @@
                                 <li>@Html.ActionLink("Product Sizes", "Index", "ProductSizes")</li>
                                 <li>@Html.ActionLink("Quantity Units", "Index", "QuantityUnits")</li>
                                 <li>@Html.ActionLink("COGs", "Index", "COGs")</li>
-                                <li>@Html.ActionLink("Fulfilment SKUs", "Index", "FulfilmentSKUs")</li>
+                                @*<li>@Html.ActionLink("Fulfilment SKUs", "Index", "FulfilmentSKUs")</li>*@
                             </ul>
                         </li>
 

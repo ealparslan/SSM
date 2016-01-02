@@ -14,7 +14,7 @@ namespace SSMWeb.Models
         [DisplayName("Color")]
         public string Name { get; set; }
 
-        [DisplayName("Colur Aliases")]
+        [DisplayName("Color Aliases")]
         public string Aliases { get; set; }
 
         [DisplayName("Is Enabled")]

@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: ProductSizes
         public ActionResult Index()
         {
-            return View(db.ProductSizes.ToList());
+            return View(db.ProductSizes.Where(s=>s.IsEnabled == true).ToList());
         }
 
         // GET: ProductSizes/Details/5
@@ -113,7 +113,15 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             ProductSize productSize = db.ProductSizes.Find(id);
-            db.ProductSizes.Remove(productSize);
+            
+            if (db.Products.Where(p => p.ProductSize.Id == id && p.IsDeleted == false).FirstOrDefault() != null)
+            {
+                TempData["ErrorMessage"] = "At least one Product is using this size. Delete the product first!";
+                return View(productSize);
+            }
+
+            productSize.IsEnabled = false;
+            //db.ProductSizes.Remove(productSize);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
