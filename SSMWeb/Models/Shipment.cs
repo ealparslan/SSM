@@ -29,6 +29,7 @@ namespace SSMWeb.Models
         [DisplayName("Loaded On")]
         public DateTime? LoadedDate { get; set; }
 
+        [Required]
         [DisplayName("Container Name")]
         public string ContainerName { get; set; }
 

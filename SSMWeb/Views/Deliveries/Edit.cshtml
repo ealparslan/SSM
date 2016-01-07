@@ -1,5 +1,11 @@
 ﻿@model SSMWeb.Models.Delivery
 
+<script type="text/javascript">
+    function ROnlySelectAction(id) {
+        alert('You cannot change Container Name information of a delivery!')
+    }
+</script>
+
 @{
     ViewBag.Title = "Edit";
 }
@@ -28,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Id,"Container Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShipmentId", null, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.DropDownList("ShipmentId", null, htmlAttributes: new { @class = "form-control", @readonly = "true", onclick = "ROnlySelectAction(this.value);" })
                 @Html.ValidationMessageFor(model => model.Shipment.ContainerName, "", new { @class = "text-danger" })
             </div>
         </div>

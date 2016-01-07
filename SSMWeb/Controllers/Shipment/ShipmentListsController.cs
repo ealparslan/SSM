@@ -61,7 +61,7 @@ namespace SSMWeb.Models
             Shipment shipment = db.Shipments.Find(id);
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "ContainerName", id);
-
+            ViewBag.ReturnRedirectId = id;
             return View();
         }
 

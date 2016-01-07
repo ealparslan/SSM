@@ -86,7 +86,8 @@ $(document).ready(function() {});
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to list", "Index", new { id = ViewBag.ReturnRedirectId }, null)
+
 </div>
 
 @section Scripts {

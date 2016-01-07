@@ -29,6 +29,8 @@ namespace SSMWeb.Models
                     selectedItems.Add(item);
                 }
             }
+            ViewBag.DeliveryId = id;
+
             return View(selectedItems);
         }
 
@@ -51,8 +53,9 @@ namespace SSMWeb.Models
         public ActionResult Create(int id)
         {
             Shipment shipment = db.Shipments.Find(id);
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU");
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Shipment.ContainerName",id);
+            ViewBag.ReturnRedirectId = id;
 
             return View();
         }
@@ -78,7 +81,7 @@ namespace SSMWeb.Models
                         break;
                 };
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", deliveryList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Shipments, "Id", "Date", deliveryList.DeliveryId);
 
             return View(deliveryList);

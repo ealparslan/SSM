@@ -7,7 +7,9 @@
 <h2>Delivery Items</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.DeliveryId }, null)
+
+
 </p>
 <table id="richtable" class="display">
     <thead>

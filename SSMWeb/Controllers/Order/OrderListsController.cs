@@ -50,6 +50,7 @@ namespace SSMWeb.Controllers.Order
 
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", id);
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
+            ViewBag.ReturnRedirectId = id;
 
             return View();
         }

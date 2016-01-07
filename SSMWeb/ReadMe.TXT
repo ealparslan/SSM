@@ -9,8 +9,8 @@ Uygulamanin kurulmasi icin adim adim asagidakiler yapilmalidir:
 Azure uzerinde yeni bir veritabani olusturulur.
 Olusturulan veritabaninin baglanti bilgileri WebConfig dosyasina girilir
 Uygulama IIS e deploy edilerek calistirilir.
-Uygulamaya anasayfadan erisilir. Uygulama kullanicilari olusturulur.
-userManagement.sql dosyasinda gerekli degisiklikler yapilarak kosturulur.
+userManagement.sql dosyasi kosturulur.
+admin ile login olunur, shipment ana sayfa bir kez goruntulenir
 sampleLocation.sql komutu calistirilir.
 functions.sql komutu calistirilir.
 SQL Server Management Studio > Tools > Options > Designers > Prevent saving changes that require drop ile ilgili checkbox kaldirilir

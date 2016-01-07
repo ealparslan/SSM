@@ -60,7 +60,7 @@
 
                     <div class="form-group">
                         @Html.Label("Box Id")&nbsp; &nbsp; &nbsp; &nbsp;
-                        @Html.TextBox("boxid")&nbsp; &nbsp; &nbsp; &nbsp;
+                        @Html.TextBox("boxid","")&nbsp; &nbsp; &nbsp; &nbsp;
                         @Html.TextBox("orderid", (string)ViewContext.RouteData.Values["id"], new { style = "display:none;" })
                         <input type="submit" value="Drop" class="btn btn-default" name="Sell" />
                     </div>

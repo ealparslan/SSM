@@ -132,6 +132,11 @@ namespace SSMWeb.Models
         public ActionResult DeleteConfirmed(int id)
         {
             Shipment shipment = db.Shipments.Find(id);
+            if(shipment.IsDelivered)
+            {
+                TempData["ErrorMessage"] = "You cannot delete a shipment if it is delivered! This shipment is delivered on " + shipment.Deliveries.FirstOrDefault().Date;
+                return RedirectToAction("Index");
+            }
             db.Shipments.Remove(shipment);
             db.SaveChanges();
             return RedirectToAction("Index");

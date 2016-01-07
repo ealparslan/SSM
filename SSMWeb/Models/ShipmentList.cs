@@ -14,11 +14,13 @@ namespace SSMWeb.Models
         [DisplayName("Product Id")]
         public int ProductId { get; set; }
 
+        [Required]
         [DisplayName("Box Capacity")]
-        public string BoxCapacity { get; set; }
+        public int BoxCapacity { get; set; }
 
+        [Required]
         [DisplayName("Box Quantity")]
-        public string BoxQuantity { get; set; }
+        public int BoxQuantity { get; set; }
 
         [DisplayName("Shipment Id")]
         public int ShipmentId { get; set; }

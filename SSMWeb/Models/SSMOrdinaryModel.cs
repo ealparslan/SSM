@@ -82,7 +82,7 @@ namespace SSMWeb.Models
             modelBuilder.Entity<Shipment>()
                 .HasMany(e => e.ShipmentLists)
                 .WithRequired(e => e.Shipment)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Shipment>()
                 .HasMany(e => e.Deliveries)
@@ -108,7 +108,7 @@ namespace SSMWeb.Models
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderLists)
                 .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

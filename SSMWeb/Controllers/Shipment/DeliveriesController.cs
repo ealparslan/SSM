@@ -121,6 +121,7 @@ namespace SSMWeb.Models
         // GET: DeliveryLists/AddNewItem/2
         public ActionResult AddNewItem(int? id)
         {
+            ViewBag.ListItemId = id;
             return RedirectToAction("Create", "DeliveryLists", new { id = id });
 
         }

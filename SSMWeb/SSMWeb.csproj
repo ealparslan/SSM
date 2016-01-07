@@ -532,12 +532,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB Scripts\Trigger_ShipmentDelivered.sql">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Report\BarcodeReport.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>

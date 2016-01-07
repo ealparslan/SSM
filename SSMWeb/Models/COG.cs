@@ -15,7 +15,7 @@ namespace SSMWeb.Models
         [DisplayName("Unit price")]
         [DataType(DataType.Currency)]
         [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:c}")]
-        public int UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
 
         [DisplayName("Minimum Quantity")]
         public int MinQty { get; set; }
@@ -26,7 +26,7 @@ namespace SSMWeb.Models
         [DisplayName("Set Price")]
         [DataType(DataType.Currency)]
         [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:c}")]
-        public int SetPrice { get; set; }
+        public double SetPrice { get; set; }
 
         [DisplayName("Product Id")]
         public int ProductId { get; set; }
