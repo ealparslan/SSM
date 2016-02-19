@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spire.Barcode;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace SSMWeb
     {
         protected void Application_Start()
         {
+            BarcodeSettings.ApplyKey("E7YA5-BFUY1-X0IZR-QKV8Y-21HD1");
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

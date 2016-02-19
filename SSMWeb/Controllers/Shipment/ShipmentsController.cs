@@ -13,6 +13,9 @@ namespace SSMWeb.Models
     [Authorize(Roles = "shipper, stocker, admin")]
     public class ShipmentsController : Controller
     {
+        String[] destCities = { "Los Angeles", "New York", "San Francisco" };
+        String[] containerTypes = { " ", "20", "40" };
+
         private SSMOrdinaryModel db = new SSMOrdinaryModel();
 
 
@@ -40,10 +43,7 @@ namespace SSMWeb.Models
         // GET: Shipments/Create
         public ActionResult Create()
         {
-            String[] destCities = { "Los Angeles", "New York", "San Francisco" }; 
             ViewBag.destCities = new SelectList(destCities);
-
-            String[] containerTypes = { " ", "20", "40" };
             ViewBag.containerTypes = new SelectList(containerTypes);
 
             Shipment model = new Shipment
@@ -62,6 +62,9 @@ namespace SSMWeb.Models
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CreatedDate,CreatedUserId,UpdatedDate,UpdatedUserId,LoadedDate,ContainerName,PONumber,BoxQuantity,DestinationCity,ETD,ContainerType,PickupReferanceID,VesselName,IsAirShipment,FreightCompany,IsCustomsCleared,IsDelivered,IsCustomsPaid,IsFreightPaid,CustomsAmount,FreightAmount,HandlingFeeAmount")] Shipment shipment)
         {
+            ViewBag.destCities = new SelectList(destCities);
+            ViewBag.containerTypes = new SelectList(containerTypes);
+
             if (ModelState.IsValid)
             {
                 db.Shipments.Add(shipment);
@@ -84,10 +87,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            String[] destCities = { "Los Angeles", "New York", "San Francisco" };
             ViewBag.destCities = new SelectList(destCities);
-
-            String[] containerTypes = { " ", "20", "40" };
             ViewBag.containerTypes = new SelectList(containerTypes);
 
             shipment.UpdatedDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
@@ -102,6 +102,9 @@ namespace SSMWeb.Models
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CreatedDate,CreatedUserId,UpdatedDate,UpdatedUserId,LoadedDate,ContainerName,PONumber,BoxQuantity,DestinationCity,ETD,ContainerType,PickupReferanceID,VesselName,IsAirShipment,FreightCompany,IsCustomsCleared,IsDelivered,IsCustomsPaid,IsFreightPaid,CustomsAmount,FreightAmount,HandlingFeeAmount")] Shipment shipment)
         {
+            ViewBag.destCities = new SelectList(destCities);
+            ViewBag.containerTypes = new SelectList(containerTypes);
+
             if (ModelState.IsValid)
             {
                 db.Entry(shipment).State = EntityState.Modified;

@@ -99,7 +99,7 @@ namespace SSMWeb.Models
             {
                 return HttpNotFound();
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", deliveryList.ProductId);
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Shipment.ContainerName", deliveryList.DeliveryId);
             return View(deliveryList);
         }
@@ -117,7 +117,7 @@ namespace SSMWeb.Models
                 db.SaveChanges();
                 return RedirectToAction("Index","Deliveries");
             }
-            ViewBag.ProductId = new SelectList(db.Products, "Id", "SKU", deliveryList.ProductId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", deliveryList.ProductId);
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date", deliveryList.DeliveryId);
             return View(deliveryList);
         }

@@ -85,6 +85,7 @@ namespace SSMWeb.Controllers.Order
             }
 
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
+            ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU");
             return View(orderList);
         }
 
@@ -145,9 +146,12 @@ namespace SSMWeb.Controllers.Order
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             OrderList orderList = await db.OrderLists.FindAsync(id);
+            int orderId = orderList.Order.Id;
             db.OrderLists.Remove(orderList);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            ViewBag.ReturnRedirectId = orderId;
+
+            return RedirectToAction("Index", new { id = orderId });
         }
 
         protected override void Dispose(bool disposing)

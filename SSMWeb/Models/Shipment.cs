@@ -25,8 +25,8 @@ namespace SSMWeb.Models
         [DisplayName("Updated By")]
         public string UpdatedUserId { get; set; }
 
-        [DataType(DataType.Date)]
         [DisplayName("Loaded On")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? LoadedDate { get; set; }
 
         [Required]
@@ -37,13 +37,13 @@ namespace SSMWeb.Models
         public string PONumber { get; set; }
 
         [DisplayName("Box Quantity")]
-        public long? BoxQuantity { get; set; }
+        public int? BoxQuantity { get; set; }
 
         [DisplayName("Destination")]
         public string DestinationCity { get; set; }
 
-        [DataType(DataType.Date)]
         [DisplayName("ETD")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? ETD { get; set; }
 
         [DisplayName("Container Type")]
@@ -91,5 +91,7 @@ namespace SSMWeb.Models
         public virtual HashSet<ShipmentList> ShipmentLists { get; set; }
 
         public virtual HashSet<Delivery> Deliveries { get; set; }
+
+
     }
 }

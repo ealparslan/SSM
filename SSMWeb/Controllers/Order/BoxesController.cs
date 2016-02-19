@@ -6,6 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Spire.Barcode;
+using System.Drawing;
+using System.IO;
 
 namespace SSMWeb.Models
 {
@@ -93,18 +96,47 @@ namespace SSMWeb.Models
 
         private byte[] getBarcodeImage(string barcode, string title)
         {
+            byte[] retval = null;
+
             try
             {
-                BarCode39 _barcode = new BarCode39();
-                int barSize = 128;
-                string fontFile = System.Web.HttpContext.Current.Server.MapPath("~/fonts/FREE3OF9.TTF");
-                return (_barcode.Code39(barcode, barSize, true, title, fontFile));
+                BarcodeSettings settings = new BarcodeSettings();
+
+                settings.Type = (BarCodeType)Enum.Parse(typeof(BarCodeType), "Code128");
+                settings.Data = barcode;
+                settings.HasBorder = false;
+                settings.TextFont = new System.Drawing.Font("SimSun", 8, FontStyle.Bold);
+                settings.BarHeight = 15;
+                settings.ShowText = true;
+                settings.ShowCheckSumChar = false;
+                settings.ForeColor = Color.FromName("Black");
+                BarCodeGenerator generator = new BarCodeGenerator(settings);
+                Image barcodeImg = generator.GenerateImage();
+                using (var ms = new MemoryStream())
+                {
+                    barcodeImg.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+                    retval = ms.ToArray();
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                //ErrorLog.WriteErrorLog("Barcode", ex.ToString(), ex.Message);
+
+                throw;
             }
-            return null;
+
+            return retval;
+
+            //try
+            //{
+            //    BarCode39 _barcode = new BarCode39();
+            //    int barSize = 128;
+            //    string fontFile = System.Web.HttpContext.Current.Server.MapPath("~/fonts/FREE3OF9.TTF");
+            //    return (_barcode.Code39(barcode, barSize, true, title, fontFile));
+            //}
+            //catch (Exception ex)
+            //{
+            //    //ErrorLog.WriteErrorLog("Barcode", ex.ToString(), ex.Message);
+            //}
         }
 
         private byte[] getBarcodeImage(string barcodeSource)

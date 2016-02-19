@@ -15,8 +15,8 @@ namespace SSMWeb.Models
         [DisplayName("Order Name")]
         public string OrderName { get; set; }
 
-        [DataType(DataType.Date)]
         [DisplayName("Sold Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SoldDate { get; set; }
 
         [Required]

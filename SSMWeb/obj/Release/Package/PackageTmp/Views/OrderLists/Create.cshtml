@@ -5,7 +5,11 @@
 $.getScript('../../Scripts/select2.min.js',function(){
   var select = $('#select2').select2();
 });
-$(document).ready(function() {});
+$(document).ready(function () { });
+
+function ROnlySelectAction(id) {
+    alert('You cannot change Order Id of an item under this order!')
+}
 </script>
 
 @{
@@ -35,7 +39,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.OrderId, "OrderId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("OrderId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("OrderId", null, htmlAttributes: new { @class = "form-control", @readonly = "true", onclick = "ROnlySelectAction(this.value);" })
                 @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
             </div>
         </div>

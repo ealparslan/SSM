@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: COGs
         public ActionResult Index()
         {
-            var COGS = db.COGS.Include(c => c.Product);
+            var COGS = db.COGS.Include(c => c.Product).Where(c=>c.Product.IsDeleted==false);
             return View(COGS.ToList());
         }
 
@@ -49,13 +49,21 @@ namespace SSMWeb.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UnitPrice,MinQty,MaxQty,SetPrice,ProductId")] COG cOG)
+        public ActionResult Create([Bind(Include = "Id,UnitPrice,MinQty,MaxQty,SetPrice,ProductId")] COG cOG, string Create)
         {
             if (ModelState.IsValid)
             {
                 db.COGS.Add(cOG);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                switch (Create)
+                {
+                    case "Add":
+                        return RedirectToAction("Index");
+                        break;
+                    case "Add More":
+                        return RedirectToAction("Create");
+                        break;
+                };
             }
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", cOG.ProductId);
             return View(cOG);

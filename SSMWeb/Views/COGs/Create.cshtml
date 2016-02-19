@@ -26,7 +26,7 @@ $(document).ready(function() {});
         <div class="form-group">
             @Html.LabelFor(model => model.ProductId, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ProductId", null, htmlAttributes: new { id = "select2", @class = "form-control" })
+                @Html.DropDownList("ProductId", null, "Select product SKU", htmlAttributes: new { id = "select2", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,8 +66,11 @@ $(document).ready(function() {});
 
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Add" class="btn btn-default" name="Create" />
+            </div>
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Add More" class="btn btn-default" name="Create" />
             </div>
         </div>
     </div>
