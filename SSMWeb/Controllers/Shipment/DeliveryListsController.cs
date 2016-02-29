@@ -30,6 +30,7 @@ namespace SSMWeb.Models
                 }
             }
             ViewBag.DeliveryId = id;
+            TempData["ReturnPage"] = "DeliveryLists";
 
             return View(selectedItems);
         }
@@ -60,6 +61,7 @@ namespace SSMWeb.Models
             return View();
         }
 
+
         // POST: DeliveryLists/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -67,6 +69,7 @@ namespace SSMWeb.Models
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,ProductId,BoxQuantity,PartCapOfBox,DeliveryId")] DeliveryList deliveryList, string Create)
         {
+            string retPage = (string) TempData["ReturnPage"];
             if (ModelState.IsValid)
             {
                 db.DeliveryLists.Add(deliveryList);
@@ -74,7 +77,12 @@ namespace SSMWeb.Models
                 switch (Create)
                 {
                     case "Add":
-                        return RedirectToAction("Index", "Deliveries");
+                        {
+                            if (retPage.Equals("Deliveries"))
+                                return RedirectToAction("Index", "Deliveries");
+                            else
+                                return RedirectToAction("Index", "DeliveryLists", new { id = deliveryList.DeliveryId });
+                        }
                         break;
                     case "Add More":
                         return RedirectToAction("Create", "DeliveryLists", new { id = deliveryList.DeliveryId });
@@ -115,7 +123,7 @@ namespace SSMWeb.Models
             {
                 db.Entry(deliveryList).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index","Deliveries");
+                return RedirectToAction("Index", "DeliveryLists", new { id = deliveryList.DeliveryId });
             }
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", deliveryList.ProductId);
             ViewBag.DeliveryId = new SelectList(db.Deliveries, "Id", "Date", deliveryList.DeliveryId);

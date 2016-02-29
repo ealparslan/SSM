@@ -122,6 +122,7 @@ namespace SSMWeb.Models
         public ActionResult AddNewItem(int? id)
         {
             ViewBag.ListItemId = id;
+            TempData["ReturnPage"] = "Deliveries";
             return RedirectToAction("Create", "DeliveryLists", new { id = id });
 
         }

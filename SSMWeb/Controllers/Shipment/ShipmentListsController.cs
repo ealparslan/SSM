@@ -128,11 +128,10 @@ namespace SSMWeb.Models
             {
                 db.Entry(shipmentList).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index","Shipments");
             }
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", shipmentList.ProductId);
             ViewBag.ShipmentId = new SelectList(db.Products, "Id", "shipmentList.Shipment.ContainerName", shipmentList.ShipmentId);
-            return View(shipmentList);
+            return RedirectToAction("Index","ShipmentLists", new { id = shipmentList.ShipmentId });
         }
 
         // GET: ShipmentLists/Delete/5
@@ -155,10 +154,12 @@ namespace SSMWeb.Models
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            int whichShipment;
             ShipmentList shipmentList = db.ShipmentLists.Find(id);
+            whichShipment = shipmentList.ShipmentId;
             db.ShipmentLists.Remove(shipmentList);
             db.SaveChanges();
-            return RedirectToAction("Index", "Shipments");
+            return RedirectToAction("Index", "ShipmentLists", new { id = whichShipment });
         }
 
         protected override void Dispose(bool disposing)

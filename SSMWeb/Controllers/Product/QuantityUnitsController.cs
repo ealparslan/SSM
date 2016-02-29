@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: QuantityUnits
         public ActionResult Index()
         {
-            return View(db.QuantityUnits.Where(q=>q.IsEnabled==true).ToList());
+            return View(db.QuantityUnits.ToList());
         }
 
         // GET: QuantityUnits/Details/5

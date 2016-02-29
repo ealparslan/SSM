@@ -18,7 +18,7 @@ namespace SSMWeb.Models
         // GET: ProductColors
         public ActionResult Index()
         {
-            return View(db.ProductColors.Where(c=>c.IsEnabled == true).ToList());
+            return View(db.ProductColors.ToList());
         }
 
         // GET: ProductColors/Details/5
