@@ -449,6 +449,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SSM_pass.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
