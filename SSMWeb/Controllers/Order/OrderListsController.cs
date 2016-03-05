@@ -116,9 +116,15 @@ namespace SSMWeb.Controllers.Order
         {
             if (ModelState.IsValid)
             {
+                if(orderList.SoldBoxQuantity > orderList.RequestedBoxQuantity)
+                {
+                    TempData["ErrorMessage"] = "Requested box amount cannot be less then sold amount!";
+                    return RedirectToAction("Index", "OrderLists", new { id = (int)TempData["OrderId"]/*, r = "refreshing"*/ });
+                }
+
                 db.Entry(orderList).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "OrderLists", new { id = (int)TempData["OrderId"]/*, r = "refreshing"*/ });
             }
             ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderName", orderList.OrderId);
             ViewBag.ProductId = new SelectList(db.Products.Where(p => p.IsDeleted == false), "Id", "SKU", orderList.ProductId);
